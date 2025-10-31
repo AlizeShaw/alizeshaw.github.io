@@ -120,31 +120,13 @@ html:not(.dark) .logo-overlap-image {
     border-color: #0891b2; /* Cyan-700-light */
 }
 
-/* --- NEW STYLES FOR ACHIEVEMENT BULLETS (REQUEST 3) --- */
+/* --- ACHIEVEMENT STYLES (BULLETS REMOVED) --- */
 .achievement-list {
     list-style: none; 
     padding-left: 0;
 }
 .achievement-list li {
-    position: relative;
-    padding-left: 1.5rem; /* Space for the custom bullet */
     margin-bottom: 0.75rem; /* Matches space-y-3 */
-}
-.achievement-list li::before {
-    content: "•"; /* Unicode bullet */
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-    font-size: 1.25rem; /* Slightly larger bullet */
-    line-height: 1.25rem;
-    top: 0; /* Align bullet to the top of the line */
-}
-/* Achievement bullets remain cyan for accent */
-html.dark .achievement-list li::before {
-    color: #22d3ee; /* Cyan-400-dark */
-}
-html:not(.dark) .achievement-list li::before {
-    color: #0891b2; /* Cyan-700-light */
 }
 
 /* --- NEW STYLES FOR PROJECT CARD (REQUEST 4) --- */
@@ -214,6 +196,7 @@ html.dark .project-card-item:hover {
 
 .project-item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
@@ -221,7 +204,7 @@ html.dark .project-card-item:hover {
 .project-image {
   width: 100px;
   height: 100px;
-  margin-right: 1rem;
   object-fit: cover;
   border-radius: 8px;
+  margin-left: 1rem;
 }

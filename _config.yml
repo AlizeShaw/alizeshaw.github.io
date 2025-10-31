@@ -1,6 +1,8 @@
-title: Alize Shaw
+title: Dishana Rupani
 description: 18 y/o Developer building the future.
 
 collections:
   projects:
+    output: true
+  posts:
     output: true

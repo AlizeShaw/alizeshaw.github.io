@@ -1,44 +1,29 @@
-<!DOCTYPE html>
-<html lang="en" class="dark"> 
+---
+layout: default
+title: Blogs
+---
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alize Shaw - Blog</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="pb-20 sm:pb-24">
-    <!-- Main Content Wrapper: Centers the content container, left-aligned content -->
-    <div class="flex items-start justify-center p-6 sm:p-10">
-        <!-- Content Container (Handles all three pages: Home, Blog, Projects) -->
-        <div class="w-full max-w-3xl text-left mt-10" id="page-content-wrapper">
-            <div id="blog-page" class="space-y-12 pt-4">
-                <section class="blog" id="blog-section">
-                    <h2 class="text-3xl font-bold text-white-dark text-gray-700 mb-6 pb-2 border-b border-gray-700-dark border-gray-200-light">The Latest Thoughts</h2>
-                    <ul class="list-none space-y-0 text-lg">
-                        <li>
-                            <a href="#" class="blog-post-link text-gray-300-dark text-gray-700">
-                                <h3 class="text-xl font-semibold transition-colors duration-100 text-white-dark text-gray-800">If you're 18 you should be sidequestmaxxing</h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500">September 4, 2025</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="blog-post-link text-gray-300-dark text-gray-700">
-                                <h3 class="text-xl font-semibold transition-colors duration-100 text-white-dark text-gray-800">All of my previous projects</h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500">May 10, 2024</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="blog-post-link text-gray-300-dark text-gray-700">
-                                <h3 class="text-xl font-semibold transition-colors duration-100 text-white-dark text-gray-800">My annoying situation with my high school and internships</h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500">April 1, 2024</p>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
+<div id="blog-page" class="space-y-12 pt-4">
+    <section class="blog" id="blog-section">
+        <div class="flex justify-between items-center mb-6 pb-2 border-b border-gray-700-dark border-gray-200-light">
+            <h2 class="text-3xl font-bold text-white-dark text-gray-700">Blogs and Publications</h2>
+            <div class="relative">
+                <button id="search-icon" class="interactive-link nav-icon-dark text-gray-500-light p-2 rounded-md hover:bg-white/10">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </button>
+                <input type="text" id="search-input" class="absolute right-0 top-0 w-0 p-2 rounded-md bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-cyan-400 transition-all duration-300 opacity-0" placeholder="Search...">
             </div>
         </div>
-    </div>
-</body>
-</html>
+        <ul id="blog-posts" class="list-none space-y-0 text-lg">
+            {% for post in site.posts %}
+            <li>
+                <a href="{{ post.url }}" class="blog-post-link text-gray-300-dark text-gray-700">
+                    <h3 class="text-xl font-semibold transition-colors duration-100 text-white-dark text-gray-800">{{ post.title }}</h3>
+                    <p class="text-sm text-gray-500-dark text-gray-500">{{ post.date | date: "%B %d, %Y" }}</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <ul id="search-results" class="list-none space-y-0 text-lg"></ul>
+    </section>
+</div>
