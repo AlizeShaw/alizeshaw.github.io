@@ -1,0 +1,22 @@
+---
+layout: default
+title: Projects
+---
+
+<div id="projects-page" class="space-y-12 pt-4">
+    <section class="projects" id="projects-section">
+        <h2 class="text-3xl font-bold text-white-dark text-gray-700 mb-6 pb-2 border-b border-gray-700-dark border-gray-200-light">My Notable Work</h2>
+        <ul class="list-none space-y-0 text-lg">
+            {% for project in site.projects %}
+            <li>
+                <a href="{{ project.url }}" class="blog-post-link text-gray-300-dark text-gray-700">
+                    <div class="project-item">
+                        <img src="{{ project.image }}" alt="{{ project.title }}" class="project-image">
+                        <h3 class="text-xl font-semibold transition-colors duration-100 text-white-dark text-gray-800">{{ project.title }}</h3>
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>

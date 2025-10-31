@@ -8,82 +8,9 @@
     
     <!-- Load Tailwind CSS for responsiveness and styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Base styles for light mode */
-        body {
-            /* This ensures the application is fully responsive and takes up full height */
-            background-color: #000000;
-            color: #333;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            min-height: 100vh;
-        }
-
-        /* Custom color definitions for light mode */
-        .text-cyan-400-light { color: #0891b2; } /* cyan-700 for light mode accents */
-        .text-gray-500-light { color: #6b7280; } /* gray-500 for light mode links */
-        .border-gray-200-light { border-color: #e5e7eb; } /* gray-200 for light mode borders */
-        .bg-white-light { background-color: #fff; }
-        .hover-cyan-light:hover { color: #0891b2; } /* cyan-700 hover */
-
-        /* Dark mode styles - applied when 'dark' class is on <html> */
-        html.dark body {
-            background-color: #111827; /* Deep dark background */
-            color: #d1d5db; /* Light gray text */
-        }
-        html.dark .text-white-dark { color: #fff; }
-        html.dark .text-cyan-400-dark { color: #22d3ee; } /* Cyan-400 for dark mode accents */
-        html.dark .text-gray-500-dark { color: #9ca3af; } /* gray-400 for dark mode links */
-        html.dark .border-gray-700-dark { border-color: #374151; } /* gray-700 for dark mode borders */
-        html.dark .hover-cyan-dark:hover { color: #22d3ee; } /* Strong cyan hover effect */
-        html.dark .navbar-bg-dark { background-color: rgba(31, 41, 55, 0.9); } /* dark gray with transparency for navbar */
-        html.dark .navbar-border-dark { border-color: #374151; }
-        html.dark .nav-icon-dark { color: #d1d5db; } 
-        html.dark .nav-icon-dark:hover { color: #22d3ee; } 
-
-        /* Combined interactive link styles for social icons and nav icons */
-        .interactive-link {
-            transition: color 0.3s ease-in-out, transform 0.3s ease-out; 
-        }
-        .social-link { color: #4b5563; } /* Default gray for light mode */
-        .social-link:hover { color: #0891b2; } /* Default cyan for light mode hover */
-        html.dark .social-link { color: #9ca3af; } /* Gray for dark mode */
-        html.dark .social-link:hover { color: #22d3ee; } /* Cyan for dark mode hover */
-
-        /* Style for the blog/project links to look clean and separate */
-        .blog-post-link {
-            display: block;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid;
-            transition: color 0.1s;
-        }
-        .blog-post-link h3 { transition: color 0.1s; }
-        .blog-post-link:last-child { border-bottom: none; }
-        html.dark .blog-post-link { border-color: #374151; }
-        html.dark .blog-post-link:hover h3 { color: #22d3ee; } 
-        html:not(.dark) .blog-post-link { border-color: #e5e7eb; } 
-        html:not(.dark) .blog-post-link:hover h3 { color: #0891b2; } 
-
-        /* Custom border radius for the navbar */
-        .navbar-rounded {
-            border-radius: 15px;
-        }
-
-        /* Vertical separator style */
-        .separator {
-            width: 1px;
-            background-color: #374151;
-            margin: 0 0.5rem;
-        }
-        html:not(.dark) .separator {
-            background-color: #d1d5db;
-        }
-        
-        /* Ensures the icons are above other content and have pointer */
-        .nav-interactive-icon {
-            cursor: pointer;
-            z-index: 10;
-        }
-    </style>
+    
+    <!-- Link to custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <!-- Increased bottom padding to prevent content being hidden behind the fixed navbar -->
 <body class="pb-20 sm:pb-24"> 
@@ -110,9 +37,14 @@
                 
                 <!-- Header (Left-Aligned) -->
                 <header id="top" class="pb-6 border-b border-gray-700-dark border-gray-200-light">
-                    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-white-dark text-gray-800">
-                        Alize Shaw
-                    </h1>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/avatar1.jpg" 
+                             alt="Alize Shaw Logo" 
+                             class="w-16 h-16 rounded-[20px] border-2 border-cyan-400-dark border-cyan-400-light object-cover transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-400/20">
+                        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-white-dark text-gray-800">
+                            Alize Shaw
+                        </h1>
+                    </div>
                     <p class="text-lg text-cyan-400-dark text-cyan-400-light mt-2">
                         18 y/o Developer building the future.
                     </p>
@@ -120,92 +52,191 @@
                     <!-- Social Media Icons Container (Kept in Header) -->
                     <div class="flex space-x-4 mt-4 social-link">
                         <!-- GitHub Link (Replace YOUR_GITHUB_PROFILE_URL) -->
-                        <a href="YOUR_GITHUB_PROFILE_URL" target="_blank" aria-label="GitHub Profile" class="interactive-link social-link">
-                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.37-1-3.35.45-1.03.48-2.05-.12-3.04 0 0-1.03-.35-3.41 1.05A7.17 7.17 0 0 0 12 5.5c-1.12 0-2.24.2-3.3.61C5.54 3.3 4.5 3.65 4.5 3.65c-.6 1-.57 2.02-.12 3.04-.73.98-1.08 2.08-1 3.35 0 3.5 3 5.5 6 5.5-.39.42-.75 1.05-.75 2v4"/></svg>
-                        </a>
+                        <div class="relative group">
+                            <a href="YOUR_GITHUB_PROFILE_URL" target="_blank" aria-label="GitHub Profile" class="interactive-link social-link w-6 h-6 overflow-hidden rounded-[10px] block hover:scale-110 transition-transform duration-300">
+                                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/github.jpg" alt="GitHub" class="w-full h-full object-cover">
+                            </a>
+                            <!-- Tooltip -->
+                            <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                                GitHub
+                            </span>
+                        </div>
                         <!-- LinkedIn Link (Replace YOUR_LINKEDIN_PROFILE_URL) -->
-                        <a href="YOUR_LINKEDIN_PROFILE_URL" target="_blank" aria-label="LinkedIn Profile" class="interactive-link social-link">
-                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                        </a>
+                        <div class="relative group">
+                            <a href="YOUR_LINKEDIN_PROFILE_URL" target="_blank" aria-label="LinkedIn Profile" class="interactive-link social-link w-6 h-6 overflow-hidden rounded-[10px] block hover:scale-110 transition-transform duration-300">
+                                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/linkedin%20(2).png" alt="LinkedIn" class="w-full h-full object-cover">
+                            </a>
+                            <!-- Tooltip -->
+                            <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                                LinkedIn
+                            </span>
+                        </div>
                         <!-- X/Twitter Link (Replace YOUR_X_PROFILE_URL) -->
-                        <a href="YOUR_X_PROFILE_URL" target="_blank" aria-label="X/Twitter Profile" class="interactive-link social-link">
-                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.88L4.11 22.75H1.058l7.582-9.28L1.444 2.25h3.19l4.796 6.045L13.79 2.25h4.454zM11.61 17.158l.775.986.685.875 3.256 4.107h-2.185l-3.264-4.11-2.086-2.63h-2.185l-1.396 1.764h-3.19l7.582-9.593L1.058 2.25h3.308l7.227 8.26-2.112 2.666-1.574 1.986z"/></svg>
-                        </a>
+                        <div class="relative group">
+                            <a href="YOUR_X_PROFILE_URL" target="_blank" aria-label="X/Twitter Profile" class="interactive-link social-link w-6 h-6 overflow-hidden rounded-[10px] block hover:scale-110 transition-transform duration-300">
+                                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/x.png" alt="X/Twitter" class="w-full h-full object-cover">
+                            </a>
+                            <!-- Tooltip -->
+                            <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                                X
+                            </span>
+                        </div>
                     </div>
                 </header>
                 
-                <!-- Achievements Section -->
+                <!-- Achievements Section (Moved from bottom) -->
                 <section class="achievements">
                     <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-6">Achievements</h2>
-                    <ul class="list-none space-y-3 text-gray-400-dark text-gray-600 text-base">
+                    <!-- Applied custom list style class 'achievement-list' -->
+                    <ul class="achievement-list text-gray-400-dark text-gray-600 text-base">
                         <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Silver medalist math competition.
+                            <strong class="text-cyan-400-dark text-cyan-400-light">Silver medalist</strong> in a math competition.
                         </li>
                         <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Gained my first bios troubleshooting job at 11 y/o
+                            Gained my first bios troubleshooting job at **11 y/o**.
                         </li>
                         <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Got enrolled in a Computer Software Diploma Program at 12 y/o
+                            Got enrolled in a **Computer Software Diploma Program** at **12 y/o**.
                         </li>
                         <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Got a part time job at a hardware solutions place <strong class="text-cyan-400-dark text-cyan-400-light">fixed issues of more than 100 clients</strong> at 14
+                            Got a part-time job at a hardware solutions place, fixed issues of more than **100 clients** at **14**.
                         </li>
                         <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Finished all high school programming classes in 3 weeks instead of 3 years at 13
+                            Finished all high school programming classes in <strong class="text-cyan-400-dark text-cyan-400-light">3 weeks</strong> instead of 3 years at **13**.
                         </li>
                         <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Got accepted as a summer research student with 100% scholarship.
+                            Got accepted as a summer research student with <strong class="text-cyan-400-dark text-cyan-400-light">100% scholarship</strong>.
                         </li>
                         <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Explored freelancing projects at 15.
+                            Explored freelancing projects at **15**.
                         </li>
                         <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Published a speculative theory on Quantum Temporal Lattice(IJSAT).
+                            Published a speculative theory on **Quantum Temporal Lattice** (IJSAT).
                         </li>
                         <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Explored what happens when a hole is made in a Gaussian body doing complex calculations and reached to a conclusion (praised by many).
+                            Explored what happens when a hole is made in a **Gaussian body** doing complex calculations and reached a conclusion (praised by many).
                         </li>
                         <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Studying chinese since 16
+                            Studying chinese since **16**.
                         </li>
                     </ul>
                 </section>
 
+                <!-- EXPERIENCE SECTION -->
+                <section class="experience" id="experience-section">
+                    <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-6">Experience</h2>
+                    
+                <!-- 1. Alzeural Entry (Clickable/Toggle) - inline logo so title sits next to image -->
+                <div id="alzeural-entry" onclick="toggleDetails('alzeural-details')" 
+                    class="mb-4 cursor-pointer">
+                        <!-- Inline logo and content wrapper -->
+                        <div class="flex items-start gap-3">
+                            <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/alzie.jpg"
+                                 alt="Alzeural Logo"
+                                 class="inline-logo"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/60x60/1f2937/ffffff?text=Logo';">
+
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-xl font-semibold text-white-dark text-gray-800">
+                                        Alzeural
+                                    </h3>
+                                    <span class="text-sm text-gray-400-dark text-gray-600">Sep 2025 - Present</span>
+                                </div>
+                                <p class="text-lg text-cyan-400-dark text-cyan-400-light">
+                                    Open Source Maintainer
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Collapsible Details -->
+                        <div id="alzeural-details" class="hidden pt-3">
+                            <p class="text-base text-gray-400-dark text-gray-600 border-l-2 border-cyan-400/50 pl-4">
+                                Managed the whole Alzeural's GitHub repository from guiding other contributors to merging requests and raising issues.
+                            </p>
+                        </div>
+                    </div>
+
+                <!-- 2. Plaksha University Entry (Clickable/Toggle) - inline logo like Alzeural -->
+                <div id="plaksha-entry" onclick="toggleDetails('plaksha-details')"
+                    class="mb-4 cursor-pointer">
+                        <!-- Inline logo + content -->
+                        <div class="flex items-start gap-3">
+                            <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/plaksha.webp"
+                                 alt="Plaksha University Logo"
+                                 class="inline-logo"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/60x60/1f2937/ffffff?text=Logo';">
+
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-xl font-semibold text-white-dark text-gray-800">
+                                        Plaksha University
+                                    </h3>
+                                    <span class="text-sm text-gray-400-dark text-gray-600">May 2022 - June 2022</span>
+                                </div>
+                                <p class="text-lg text-cyan-400-dark text-cyan-400-light">
+                                    Summer Research Student
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Collapsible Details -->
+                        <div id="plaksha-details" class="hidden pt-3">
+                            <p class="text-base text-gray-400-dark text-gray-600 border-l-2 border-cyan-400/50 pl-4">
+                                Led a team of four to build the Marvin Project.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- END EXPERIENCE SECTION -->
+
                 <!-- Education Section -->
                 <section class="education" id="education-section">
                     <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-6">Education</h2>
-                    <div class="flex items-start space-x-4 border border-gray-700-dark border-gray-200-light p-4 rounded-xl transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-400/10">
+                    <div class="flex items-start space-x-4 mb-4">
                         <!-- Logo from provided URL -->
-                        <img src="https://upload.wikimedia.org/wikipedia/en/b/b3/IIT_Madras_Logo.svg" 
+                        <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/iitm.png" 
                              alt="IIT Madras Logo" 
-                             class="w-10 h-10 flex-shrink-0 mt-1 object-contain"
-                             onerror="this.onerror=null;this.src='https://placehold.co/40x40/1f2937/ffffff?text=Logo';">
+                             class="w-16 h-16 flex-shrink-0 mt-1 object-contain rounded-[20px] border-2 border-cyan-400-dark border-cyan-400-light"
+                             onerror="this.onerror=null;this.src='https://placehold.co/64x64/1f2937/ffffff?text=Logo';">
                         <!-- Details -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-white-dark text-gray-800">
-                                Indian Institute of Technology Madras (IIT Madras)
-                            </h3>
-                            <p class="text-lg text-cyan-400-dark text-cyan-400-light mt-1">
-                                Pursuing Bachelors in Data Science and Statistics
-                            </p>
-                            <p class="text-sm text-gray-400-dark text-gray-600">
-                                (Expected Completion: 2029)
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-semibold text-white-dark">
+                                    IIT Madras
+                                </h3>
+                                <span class="text-sm text-gray-400-dark text-gray-600">2025-2029</span>
+                            </div>
+                            <p class="text-base text-white-dark mt-1">
+                                BS Data Science and Statistics
                             </p>
                         </div>
                     </div>
                 </section>
 
-                <!-- Skills Section -->
+                <!-- Skills Section - COLOR CHANGED TO MONOCHROME -->
                 <section class="skills" id="skills-section">
                     <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-4">Key Skills</h2>
                     <div class="flex flex-wrap gap-2 text-sm">
-                        <span class="px-3 py-1 bg-cyan-800/30 text-cyan-400-dark text-cyan-400-light rounded-full border border-cyan-500/50">Python</span>
-                        <span class="px-3 py-1 bg-cyan-800/30 text-cyan-400-dark text-cyan-400-light rounded-full border border-cyan-500/50">CUDA</span>
-                        <span class="px-3 py-1 bg-cyan-800/30 text-cyan-400-dark text-cyan-400-light rounded-full border border-cyan-500/50">LLMs (Large Language Models)</span>
-                        <span class="px-3 py-1 bg-cyan-800/30 text-cyan-400-dark text-cyan-400-light rounded-full border border-cyan-500/50">Web Development (React, Angular, JS)</span>
-                        <span class="px-3 py-1 bg-cyan-800/30 text-cyan-400-dark text-cyan-400-light rounded-full border border-cyan-500/50">Reverse Engineering</span>
+                        <!-- Skills tags updated for black/white style -->
+                        <span class="px-3 py-1 rounded-full border
+                                     bg-gray-100 text-gray-800 border-gray-300
+                                     dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Python</span>
+                        <span class="px-3 py-1 rounded-full border
+                                     bg-gray-100 text-gray-800 border-gray-300
+                                     dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">CUDA</span>
+                        <span class="px-3 py-1 rounded-full border
+                                     bg-gray-100 text-gray-800 border-gray-300
+                                     dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">LLMs (Large Language Models)</span>
+                        <span class="px-3 py-1 rounded-full border
+                                     bg-gray-100 text-gray-800 border-gray-300
+                                     dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Web Development (React, Angular, JS)</span>
+                        <span class="px-3 py-1 rounded-full border
+                                     bg-gray-100 text-gray-800 border-gray-300
+                                     dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Reverse Engineering</span>
                     </div>
                 </section>
+
             </div>
             
             <!-- 2. BLOG PAGE CONTENT (Initially Hidden) -->
@@ -235,24 +266,182 @@
                 </section>
             </div>
 
-            <!-- 3. PROJECTS PAGE CONTENT (Initially Hidden) -->
+            <!-- 3. PROJECTS PAGE CONTENT (Initially Hidden) - UPDATED TO GRID LAYOUT -->
             <div id="projects-page" class="space-y-12 hidden pt-4">
                 <section class="projects" id="projects-section">
-                    <h2 class="text-3xl font-bold text-white-dark text-gray-700 mb-6 pb-2 border-b border-gray-700-dark border-gray-200-light">My Notable Work</h2>
-                    <ul class="list-none space-y-0 text-lg">
-                        <li>
-                            <a href="#" class="blog-post-link text-gray-300-dark text-gray-700">
-                                <h3 class="text-xl font-semibold transition-colors duration-100 text-white-dark text-gray-800">CMD (Command Line Utility)</h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500">A custom command line utility for automating various development and system tasks.</p>
+                    <!-- New Heading -->
+                    <h2 class="text-3xl font-bold text-white-dark text-gray-700 mb-6 pb-2 border-b border-gray-700-dark border-gray-200-light">Some cool projects I have worked on</h2>
+                    
+                    <!-- PROJECTS GRID CONTAINER: 1 column on mobile, 2 columns on medium, 3 columns on large -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Project 1: Twitter (X) automation bot -->
+                        <div class="project-card-item group relative p-4 rounded-xl border border-gray-700-dark border-gray-200-light shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 overflow-hidden cursor-pointer">
+                            <!-- Clickable Overlay Link (Covers the entire card on hover) -->
+                            <a href="#" target="_blank" aria-label="View Project: X Automation Bot" 
+                               class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
+                                <!-- Eye Icon -->
+                                <svg class="w-10 h-10 text-white animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                                </svg>
                             </a>
-                        </li>
-                        <li>
-                            <a href="#" class="blog-post-link text-gray-300-dark text-gray-700">
-                                <h3 class="text-xl font-semibold transition-colors duration-100 text-white-dark text-gray-800">Termux Scripts</h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500">A collection of powerful shell and automation scripts tailored for Termux on Android devices.</p>
+
+                            <!-- Project Content -->
+                            <div class="space-y-3">
+                                <!-- Image Placeholder (15px rounded) -->
+                                <img src="https://placehold.co/600x200/52c2cf/111827?text=X+Automation+Bot" 
+                                     alt="Twitter X Automation Bot thumbnail"
+                                     class="w-full h-32 object-cover rounded-[15px] shadow-md transition-opacity duration-300">
+                                
+                                <h3 class="text-xl font-semibold text-white-dark text-gray-800">
+                                    Twitter (X) automation bot
+                                </h3>
+                                <p class="text-sm text-gray-500-dark text-gray-500 line-clamp-3">
+                                    A bot designed for automating posts and interactions on X (formerly Twitter) for content scheduling and engagement.
+                                </p>
+                                
+                                <!-- GitHub Link (Shows when not hovered for direct GitHub access) -->
+                                <div class="pt-1 github-link-container">
+                                    <a href="#" target="_blank" aria-label="GitHub Repository: X Automation Bot" class="interactive-link social-link hover:text-cyan-400-dark dark:hover:text-cyan-400-dark transition-colors">
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.37-1-3.35.45-1.03.48-2.05-.12-3.04 0 0-1.03-.35-3.41 1.05A7.17 7.17 0 0 0 12 5.5c-1.12 0-2.24.2-3.3.61C5.54 3.3 4.5 3.65 4.5 3.65c-.6 1-.57 2.02-.12 3.04-.73.98-1.08 2.08-1 3.35 0 3.5 3 5.5 6 5.5-.39.42-.75 1.05-.75 2v4"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 2: The marvin project -->
+                        <div class="project-card-item group relative p-4 rounded-xl border border-gray-700-dark border-gray-200-light shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 overflow-hidden cursor-pointer">
+                            <!-- Clickable Overlay Link (Covers the entire card on hover) -->
+                            <a href="#" target="_blank" aria-label="View Project: The Marvin Project" 
+                               class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
+                                <svg class="w-10 h-10 text-white animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                                </svg>
                             </a>
-                        </li>
-                    </ul>
+
+                            <!-- Project Content -->
+                            <div class="space-y-3">
+                                <!-- Image Placeholder (15px rounded) -->
+                                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/pixel.jpg" 
+                                     alt="The Marvin Project thumbnail"
+                                     class="w-full h-32 object-cover rounded-[15px] shadow-md transition-opacity duration-300">
+                                
+                                <h3 class="text-xl font-semibold text-white-dark text-gray-800">
+                                    The marvin project
+                                </h3>
+                                <p class="text-sm text-gray-500-dark text-gray-500 line-clamp-3">
+                                    The core project I contributed to during my summer research at Plaksha University, focusing on [Specify area if known, e.g., NLP/AI].
+                                </p>
+                                
+                                <!-- GitHub Link (Shows when not hovered for direct GitHub access) -->
+                                <div class="pt-1 github-link-container">
+                                    <a href="#" target="_blank" aria-label="GitHub Repository: The Marvin Project" class="interactive-link social-link hover:text-cyan-400-dark dark:hover:text-cyan-400-dark transition-colors">
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.37-1-3.35.45-1.03.48-2.05-.12-3.04 0 0-1.03-.35-3.41 1.05A7.17 7.17 0 0 0 12 5.5c-1.12 0-2.24.2-3.3.61C5.54 3.3 4.5 3.65 4.5 3.65c-.6 1-.57 2.02-.12 3.04-.73.98-1.08 2.08-1 3.35 0 3.5 3 5.5 6 5.5-.39.42-.75 1.05-.75 2v4"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: Penetrating a hole through gaussian surface -->
+                        <div class="project-card-item group relative p-4 rounded-xl border border-gray-700-dark border-gray-200-light shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 overflow-hidden cursor-pointer">
+                            <!-- Clickable Overlay Link (Covers the entire card on hover) -->
+                            <a href="#" target="_blank" aria-label="View Project: Gaussian Surface" 
+                               class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
+                                <svg class="w-10 h-10 text-white animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </a>
+
+                            <!-- Project Content -->
+                            <div class="space-y-3">
+                                <!-- Image Placeholder (15px rounded) -->
+                                <img src="https://placehold.co/600x200/52c2cf/111827?text=Gaussian+Surface+Model" 
+                                     alt="Gaussian Surface Project thumbnail"
+                                     class="w-full h-32 object-cover rounded-[15px] shadow-md transition-opacity duration-300">
+                                
+                                <h3 class="text-xl font-semibold text-white-dark text-gray-800">
+                                    Penetrating a hole through gaussian surface
+                                </h3>
+                                <p class="text-sm text-gray-500-dark text-gray-500 line-clamp-3">
+                                    A theoretical and computational exploration involving complex calculations on the field effects of creating a hole in a Gaussian body.
+                                </p>
+                                
+                                <!-- GitHub Link (Shows when not hovered for direct GitHub access) -->
+                                <div class="pt-1 github-link-container">
+                                    <a href="#" target="_blank" aria-label="GitHub Repository: Gaussian Surface" class="interactive-link social-link hover:text-cyan-400-dark dark:hover:text-cyan-400-dark transition-colors">
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.37-1-3.35.45-1.03.48-2.05-.12-3.04 0 0-1.03-.35-3.41 1.05A7.17 7.17 0 0 0 12 5.5c-1.12 0-2.24.2-3.3.61C5.54 3.3 4.5 3.65 4.5 3.65c-.6 1-.57 2.02-.12 3.04-.73.98-1.08 2.08-1 3.35 0 3.5 3 5.5 6 5.5-.39.42-.75 1.05-.75 2v4"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4: Cmd_Termux-Integration Public -->
+                        <div class="project-card-item group relative p-4 rounded-xl border border-gray-700-dark border-gray-200-light shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 overflow-hidden cursor-pointer">
+                            <!-- Clickable Overlay Link (Covers the entire card on hover) -->
+                            <a href="#" target="_blank" aria-label="View Project: Cmd_Termux-Integration" 
+                               class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
+                                <svg class="w-10 h-10 text-white animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </a>
+
+                            <!-- Project Content -->
+                            <div class="space-y-3">
+                                <!-- Image Placeholder (15px rounded) -->
+                                <img src="https://placehold.co/600x200/22d3ee/111827?text=CMD-Termux+Integration" 
+                                     alt="CMD-Termux Integration Project thumbnail"
+                                     class="w-full h-32 object-cover rounded-[15px] shadow-md transition-opacity duration-300">
+                                
+                                <h3 class="text-xl font-semibold text-white-dark text-gray-800">
+                                    Cmd\_Termux-Integration Public
+                                </h3>
+                                <p class="text-sm text-gray-500-dark text-gray-500 line-clamp-3">
+                                    Send CMD commands from Windows to Termux over local Wi-Fi. A minimal remote execution setup using client-server model.
+                                </p>
+                                
+                                <!-- GitHub Link (Shows when not hovered for direct GitHub access) -->
+                                <div class="pt-1 github-link-container">
+                                    <a href="#" target="_blank" aria-label="GitHub Repository: Cmd_Termux-Integration" class="interactive-link social-link hover:text-cyan-400-dark dark:hover:text-cyan-400-dark transition-colors">
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.37-1-3.35.45-1.03.48-2.05-.12-3.04 0 0-1.03-.35-3.41 1.05A7.17 7.17 0 0 0 12 5.5c-1.12 0-2.24.2-3.3.61C5.54 3.3 4.5 3.65 4.5 3.65c-.6 1-.57 2.02-.12 3.04-.73.98-1.08 2.08-1 3.35 0 3.5 3 5.5 6 5.5-.39.42-.75 1.05-.75 2v4"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5: alzeural an open source organisation -->
+                        <div class="project-card-item group relative p-4 rounded-xl border border-gray-700-dark border-gray-200-light shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 overflow-hidden cursor-pointer">
+                            <!-- Clickable Overlay Link (Covers the entire card on hover) -->
+                            <a href="#" target="_blank" aria-label="View Project: Alzeural Organisation" 
+                               class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
+                                <svg class="w-10 h-10 text-white animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </a>
+
+                            <!-- Project Content -->
+                            <div class="space-y-3">
+                                <!-- Image Placeholder (15px rounded) -->
+                                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/alzie.jpg" 
+                                     alt="Alzeural Open Source Organisation thumbnail"
+                                     class="w-full h-32 object-cover rounded-[15px] shadow-md transition-opacity duration-300">
+                                
+                                <h3 class="text-xl font-semibold text-white-dark text-gray-800">
+                                    alzeural an open source organisation
+                                </h3>
+                                <p class="text-sm text-gray-500-dark text-gray-500 line-clamp-3">
+                                    My personal open source organization dedicated to fostering collaboration on projects related to advanced computing and AI.
+                                </p>
+                                
+                                <!-- GitHub Link (Shows when not hovered for direct GitHub access) -->
+                                <div class="pt-1 github-link-container">
+                                    <a href="#" target="_blank" aria-label="GitHub Repository: Alzeural Organisation" class="interactive-link social-link hover:text-cyan-400-dark dark:hover:text-cyan-400-dark transition-colors">
+                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.37-1-3.35.45-1.03.48-2.05-.12-3.04 0 0-1.03-.35-3.41 1.05A7.17 7.17 0 0 0 12 5.5c-1.12 0-2.24.2-3.3.61C5.54 3.3 4.5 3.65 4.5 3.65c-.6 1-.57 2.02-.12 3.04-.73.98-1.08 2.08-1 3.35 0 3.5 3 5.5 6 5.5-.39.42-.75 1.05-.75 2v4"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </section>
             </div>
 
@@ -262,8 +451,8 @@
 
     <!-- Fixed Bottom Navbar -->
     <nav class="fixed bottom-0 left-0 right-0 z-50 p-4 flex justify-center">
-        <!-- max-w-sm provides better width for three icons and better spacing -->
-        <div class="flex items-center justify-around bg-gray-800/90 navbar-bg-dark backdrop-blur-sm py-2 px-4 border border-gray-700 navbar-border-dark navbar-rounded max-w-xs w-full">
+        <!-- The width has been reduced to max-w-[180px] and the background changed to bg-black/95 -->
+        <div class="flex items-center justify-around bg-black/95 backdrop-blur-sm py-2 px-4 border border-gray-700 navbar-border-dark navbar-rounded max-w-[180px] w-full">
             
             <!-- Home Link Group -->
             <div class="relative group flex justify-center">
@@ -304,167 +493,7 @@
         </div>
     </nav>
 
-    <script>
-        // --- Single-Page Application (SPA) Routing Logic ---
-        const homePage = document.getElementById('home-page');
-        const blogPage = document.getElementById('blog-page');
-        const projectsPage = document.getElementById('projects-page');
-        
-        const navHome = document.getElementById('nav-home');
-        const navBlog = document.getElementById('nav-blog');
-        const navProjects = document.getElementById('nav-projects');
-        
-        // Tailwind classes for active/inactive state
-        const activeNavClass = 'text-cyan-400-dark'; 
-        const inactiveNavClass = 'text-gray-500-light';
-
-        /**
-         * Hides all pages and shows the one matching the current hash.
-         */
-        function handleRouting() {
-            // Get the current hash, default to 'home'
-            const hash = window.location.hash.slice(1) || 'home'; 
-
-            // Define all pages and navigation elements
-            const pages = {
-                'home': { element: homePage, nav: navHome },
-                'blog': { element: blogPage, nav: navBlog },
-                'projects': { element: projectsPage, nav: navProjects }
-            };
-
-            // Iterate over all defined pages
-            for (const key in pages) {
-                const page = pages[key];
-                
-                // Content Visibility
-                if (key === hash) {
-                    page.element.classList.remove('hidden');
-                } else {
-                    page.element.classList.add('hidden');
-                }
-                
-                // Navigation Active State Styling
-                if (page.nav) {
-                    if (key === hash) {
-                        // Ensure the active icon is styled correctly regardless of the parent wrapper
-                        page.nav.classList.add(activeNavClass);
-                        page.nav.classList.remove(inactiveNavClass);
-                    } else {
-                        page.nav.classList.remove(activeNavClass);
-                        page.nav.classList.add(inactiveNavClass);
-                    }
-                }
-            }
-
-            // Scroll to top of the content area when changing pages
-            if (document.getElementById('page-content-wrapper')) {
-                document.getElementById('page-content-wrapper').scrollTo({ top: 0, behavior: 'instant' });
-            }
-        }
-
-        // Listen for hash changes (when nav links are clicked)
-        window.addEventListener('hashchange', handleRouting);
-        
-        // Initial run on load
-        window.addEventListener('load', () => {
-             // If no hash is present, set it to home explicitly
-            if (!window.location.hash) {
-                window.location.hash = '#home';
-            }
-            handleRouting();
-        });
-
-
-        // --- Theme Toggle Logic ---
-        const htmlElement = document.documentElement;
-
-        // Selectors for the top toggle only
-        const themeToggleTop = document.getElementById('theme-toggle-top');
-        
-        const moonIconTop = document.getElementById('moon-icon-top');
-        const sunIconTop = document.getElementById('sun-icon-top');
-
-        /**
-         * Updates the UI elements (HTML class and icons) based on the current theme state.
-         * @param {boolean} isDark - True if setting to dark mode, false for light mode.
-         */
-        function updateThemeUI(isDark) {
-            if (isDark) {
-                htmlElement.classList.add('dark');
-                // Set Moon icon active, Sun hidden for the top toggle
-                moonIconTop.classList.remove('hidden');
-                sunIconTop.classList.add('hidden');
-            } else {
-                htmlElement.classList.remove('dark');
-                // Set Sun icon active, Moon hidden for the top toggle
-                moonIconTop.classList.add('hidden');
-                sunIconTop.classList.remove('hidden');
-            }
-        }
-
-        // Initial check for theme preference and apply
-        const savedTheme = localStorage.getItem('theme');
-        const initialIsDark = savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        updateThemeUI(initialIsDark);
-
-        // Handler function for the toggle button
-        const handleThemeToggle = () => {
-            const isCurrentlyDark = htmlElement.classList.contains('dark');
-            if (isCurrentlyDark) {
-                localStorage.setItem('theme', 'light');
-                updateThemeUI(false);
-            } else {
-                localStorage.setItem('theme', 'dark');
-                updateThemeUI(true);
-            }
-        };
-        
-        // Attach listener to the top button
-        themeToggleTop.addEventListener('click', handleThemeToggle);
-
-        // --- Icon Interaction Logic (Push Away Effect) ---
-        const interactiveIcons = document.querySelectorAll('.nav-interactive-icon');
-        const pushDistance = '15px'; // Distance icons move away when a sibling is hovered
-
-        interactiveIcons.forEach(icon => {
-            // Event when the mouse enters (hovers over) an icon
-            icon.addEventListener('mouseenter', () => {
-                // Find the index of the hovered icon's parent group
-                const parentGroup = icon.closest('.group');
-                const navbarContainer = parentGroup.parentElement;
-                const groups = Array.from(navbarContainer.children).filter(el => el.classList.contains('group'));
-                const index = groups.indexOf(parentGroup);
-
-                groups.forEach((group, otherIndex) => {
-                    const otherIcon = group.querySelector('.nav-interactive-icon');
-                    if (index !== otherIndex) {
-                        // This is a sibling icon that needs to be pushed away
-                        let direction = '';
-                        if (otherIndex < index) {
-                            // Icon to the left of the hovered icon -> move left
-                            direction = `translateX(-${pushDistance})`;
-                        } else {
-                            // Icon to the right of the hovered icon -> move right
-                            direction = `translateX(${pushDistance})`;
-                        }
-                        otherIcon.style.transform = direction;
-                    } else {
-                        // The hovered icon (scales up slightly)
-                        otherIcon.style.transform = 'scale(1.1)';
-                    }
-                });
-            });
-
-            // Event when the mouse leaves (stops hovering over) an icon
-            icon.addEventListener('mouseleave', () => {
-                // Reset all icons to their default position and scale
-                const navbarContainer = icon.closest('.group').parentElement;
-                const icons = navbarContainer.querySelectorAll('.nav-interactive-icon');
-                icons.forEach(otherIcon => {
-                    otherIcon.style.transform = 'none';
-                });
-            });
-        });
-    </script>
+    <!-- Link to custom JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>

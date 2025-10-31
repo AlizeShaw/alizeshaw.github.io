@@ -1,44 +1,227 @@
-
+/* Base styles for light mode */
 body {
-  font-family: sans-serif;
-  background-color: #f0f0f0;
+    /* This ensures the application is fully responsive and takes up full height */
+    background-color: #000000;
+    color: #333;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    min-height: 100vh;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+/* Custom color definitions for light mode */
+.text-cyan-400-light { color: #0891b2; } /* cyan-700 for light mode accents */
+.text-gray-500-light { color: #6b7280; } /* gray-500 for light mode links */
+.border-gray-200-light { border-color: #e5e7eb; } /* gray-200 for light mode borders */
+.bg-white-light { background-color: #fff; }
+.hover-cyan-light:hover { color: #0891b2; } /* cyan-700 hover */
+
+/* Dark mode styles - applied when 'dark' class is on <html> */
+html.dark body {
+    background-color: #111827; /* Deep dark background */
+    color: #d1d5db; /* Light gray text */
+}
+html.dark .text-white-dark { color: #fff; }
+html.dark .text-cyan-400-dark { color: #22d3ee; } /* Cyan-400 for dark mode accents */
+html.dark .text-gray-500-dark { color: #9ca3af; } /* gray-400 for dark mode links */
+html.dark .border-gray-700-dark { border-color: #374151; } /* gray-700 for dark mode borders */
+html.dark .hover-cyan-dark:hover { color: #22d3ee; } /* Strong cyan hover effect */
+/* Removed .navbar-bg-dark as it is now handled by utility class bg-black/95 */
+html.dark .navbar-border-dark { border-color: #374151; }
+html.dark .nav-icon-dark { color: #d1d5db; } 
+html.dark .nav-icon-dark:hover { color: #22d3ee; } 
+
+/* Combined interactive link styles for social icons and nav icons */
+.interactive-link {
+    transition: color 0.3s ease-in-out, transform 0.3s ease-out; 
+}
+.social-link { color: #4b5563; } /* Default gray for light mode */
+.social-link:hover { color: #0891b2; } /* Default cyan for light mode hover */
+html.dark .social-link { color: #9ca3af; } /* Gray for dark mode */
+html.dark .social-link:hover { color: #22d3ee; } /* Cyan for dark mode hover */
+
+/* Style for the blog/project links to look clean and separate */
+.blog-post-link {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid;
+    transition: color 0.1s;
+}
+.blog-post-link h3 { transition: color 0.1s; }
+.blog-post-link:last-child { border-bottom: none; }
+html.dark .blog-post-link { border-color: #374151; }
+html.dark .blog-post-link:hover h3 { color: #22d3ee; } 
+html:not(.dark) .blog-post-link { border-color: #e5e7eb; } 
+html:not(.dark) .blog-post-link:hover h3 { color: #0891b2; } 
+
+/* Custom border radius for the navbar */
+.navbar-rounded {
+    border-radius: 15px;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 40px;
+/* Vertical separator style */
+.separator {
+    width: 1px;
+    background-color: #374151;
+    margin: 0 0.5rem;
+}
+html:not(.dark) .separator {
+    background-color: #d1d5db;
 }
 
-h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
+/* Ensures the icons are above other content and have pointer */
+.nav-interactive-icon {
+    cursor: pointer;
+    z-index: 10;
 }
 
-h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
+/* --- NEW STYLES FOR LOGO OVERLAP EFFECT (REQUEST 1 & 2) --- */
+.logo-overlap-card {
+    position: relative;
+    border-radius: 0.75rem; /* rounded-xl */
+    /* Adjust padding to shift content and provide space for the absolute logo */
+    padding: 1rem 1rem 1rem 2.5rem; 
+    padding-top: 1.5rem; 
+    transition: all 0.3s ease-in-out; 
+}
+.logo-overlap-image {
+    position: absolute;
+    top: -35px; /* Half of 40px height */
+    left: 10px; /* Shifted even more to the right */
+    z-index: 20; 
+    width: 60px; 
+    height: 60px;
+    border-radius: 12px; /* Decreased border radius */
+    border: 2px solid;
+    object-fit: cover;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+/* Inline variant for logos used inside the card flow (non-absolute) */
+.inline-logo {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: 2px solid;
+    object-fit: cover;
+}
+/* Dark Mode Overlap Styles */
+html.dark .logo-overlap-card {
+    border-color: #374151; /* gray-700-dark */
+}
+html.dark .logo-overlap-image {
+    background-color: #111827; /* Deep dark background */
+    border-color: #22d3ee; /* Cyan-400-dark */
+}
+/* Light Mode Overlap Styles */
+html:not(.dark) .logo-overlap-card {
+    border-color: #e5e7eb; /* gray-200-light */
+}
+html:not(.dark) .logo-overlap-image {
+    background-color: #fff; /* White background */
+    border-color: #0891b2; /* Cyan-700-light */
 }
 
-li {
-  margin-bottom: 10px;
+/* --- NEW STYLES FOR ACHIEVEMENT BULLETS (REQUEST 3) --- */
+.achievement-list {
+    list-style: none; 
+    padding-left: 0;
+}
+.achievement-list li {
+    position: relative;
+    padding-left: 1.5rem; /* Space for the custom bullet */
+    margin-bottom: 0.75rem; /* Matches space-y-3 */
+}
+.achievement-list li::before {
+    content: "•"; /* Unicode bullet */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.25rem; /* Slightly larger bullet */
+    line-height: 1.25rem;
+    top: 0; /* Align bullet to the top of the line */
+}
+/* Achievement bullets remain cyan for accent */
+html.dark .achievement-list li::before {
+    color: #22d3ee; /* Cyan-400-dark */
+}
+html:not(.dark) .achievement-list li::before {
+    color: #0891b2; /* Cyan-700-light */
 }
 
-a {
+/* --- NEW STYLES FOR PROJECT CARD (REQUEST 4) --- */
+.project-card-item {
+    /* Styles for the card in light mode */
+    border-color: #e5e7eb; 
+    background-color: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.project-card-item:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Lighter shadow on hover */
+    transform: translateY(-2px); /* Slight lift */
+}
+/* Styles for the card in dark mode */
+html.dark .project-card-item {
+    border-color: #374151; 
+    background-color: #1f2937; /* Gray-800 equivalent for card background */
+    box-shadow: none;
+}
+html.dark .project-card-item:hover {
+    box-shadow: 0 10px 15px -3px rgba(34, 211, 238, 0.05); /* Cyan shadow hint */
+}
+
+/* Hide the github icon initially for clean look on the project cards, 
+   only show it inside the card when its not hovered for the main link 
+   (The overall card is linked via the hover overlay link) */
+.project-card-item .github-link-container {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+.project-card-item:hover .github-link-container {
+    opacity: 0;
+}
+
+.project-details {
+  margin-top: 2rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #22d3ee;
   text-decoration: none;
-  color: #333;
 }
 
-a:hover {
-  color: #000;
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.project-details img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.github-link img {
+  width: 40px;
+  height: 40px;
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.project-image {
+  width: 100px;
+  height: 100px;
+  margin-right: 1rem;
+  object-fit: cover;
+  border-radius: 8px;
 }
