@@ -2,208 +2,255 @@
 layout: default
 title: Home
 ---
+<style>
+    /* Modal Styles */
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+    }
+    .modal.active {
+        display: flex;
+    }
+    .modal-content {
+        background-color: #1a1a1a;
+        color: #f3f4f6;
+        padding: 2rem;
+        padding-top: 3.5rem;
+        border-radius: 0.75rem;
+        max-width: 500px;
+        width: 90%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        position: relative;
+        border: 1px solid #333;
+        overflow: visible;
+    }
+    .modal-image {
+        position: absolute;
+        top: 0;
+        left: 1.5rem;
+        transform: translateY(-50%);
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        border: 2px solid #4a5568;
+        object-fit: cover;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+    .modal-header-text p {
+        font-size: 1rem;
+        color: #9ca3af;
+    }
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 1px solid #333;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+    .modal-header-text h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
+    }
+    .modal-body {
+        font-size: 1rem;
+        color: #d1d5db;
+    }
+    .close-button {
+        background: none;
+        border: none;
+        color: #9ca3af;
+        font-size: 2rem;
+        cursor: pointer;
+        line-height: 1;
+        transition: color 0.3s;
+    }
+    .close-button:hover {
+        color: #fff;
+    }
+    .inline-logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        object-fit: cover;
+        border: 1px solid #333;
+    }
+    
+    /* Achievement Hover Effect */
+    .achievement-list li {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.375rem;
+    }
+    .achievement-list li:hover {
+        transform: scale(1.05);
+    }
+    html.dark .achievement-list li:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    html:not(.dark) .achievement-list li:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
 <div id="home-page" class="space-y-12">
     
-    <!-- Header (Left-Aligned) -->
+    <!-- Header -->
     <header id="top" class="pb-6 border-b border-gray-700-dark border-gray-200-light">
-        <div class="flex items-center gap-4 mb-4">
-            <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/avatar1.jpg" 
-                 alt="Alize Shaw Logo" 
-                 class="w-16 h-16 rounded-[20px] border-2 border-cyan-400-dark border-cyan-400-light object-cover transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-400/20">
-            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-white-dark text-gray-800">
-                Dishana Rupani
-            </h1>
+        <div class="flex justify-between items-start">
+            <div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-white-dark text-gray-800">Dishana Rupani</h1>
+                <p class="text-lg text-gray-400-dark text-gray-500 mt-2">Driven by memories fueled by ambitions.</p>
+            </div>
         </div>
-        <p class="text-lg text-cyan-400-dark text-cyan-400-light mt-2">
-            Driven by memories fueled by ambitions.
-        </p>
-        
-        <!-- Social Media Icons Container (Kept in Header) -->
         <div class="flex space-x-4 mt-4 social-link">
-            <!-- GitHub Link (Replace YOUR_GITHUB_PROFILE_URL) -->
             <div class="relative group">
                 <a href="YOUR_GITHUB_PROFILE_URL" target="_blank" aria-label="GitHub Profile" class="interactive-link social-link w-6 h-6 overflow-hidden rounded-[10px] block hover:scale-110 transition-transform duration-300">
                     <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/github.jpg" alt="GitHub" class="w-full h-full object-cover">
                 </a>
-                <!-- Tooltip -->
-                <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                    GitHub
-                </span>
+                <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">GitHub</span>
             </div>
-            <!-- LinkedIn Link (Replace YOUR_LINKEDIN_PROFILE_URL) -->
             <div class="relative group">
                 <a href="YOUR_LINKEDIN_PROFILE_URL" target="_blank" aria-label="LinkedIn Profile" class="interactive-link social-link w-6 h-6 overflow-hidden rounded-[10px] block hover:scale-110 transition-transform duration-300">
                     <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/linkedin%20(2).png" alt="LinkedIn" class="w-full h-full object-cover">
                 </a>
-                <!-- Tooltip -->
-                <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                    LinkedIn
-                </span>
+                <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">LinkedIn</span>
             </div>
-            <!-- X/Twitter Link (Replace YOUR_X_PROFILE_URL) -->
             <div class="relative group">
                 <a href="YOUR_X_PROFILE_URL" target="_blank" aria-label="X/Twitter Profile" class="interactive-link social-link w-6 h-6 overflow-hidden rounded-[10px] block hover:scale-110 transition-transform duration-300">
                     <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/x.png" alt="X/Twitter" class="w-full h-full object-cover">
                 </a>
-                <!-- Tooltip -->
-                <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                    X
-                </span>
+                <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">X</span>
             </div>
         </div>
     </header>
     
-    <!-- Achievements Section (Moved from bottom) -->
+    <!-- Achievements Section -->
     <section class="achievements">
         <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-6">Achievements</h2>
-        <!-- Applied custom list style class 'achievement-list' -->
-        <ul class="achievement-list text-gray-400-dark text-gray-600 text-base">
-            <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                <strong class="text-cyan-400-dark text-cyan-400-light">Silver medalist</strong> in a math competition.
-            </li>
-            <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                Gained my first bios troubleshooting job at **11 y/o**.
-            </li>
-            <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                Got enrolled in a **Computer Software Diploma Program** at **12 y/o**.
-            </li>
-            <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                Got a part-time job at a hardware solutions place, fixed issues of more than **100 clients** at **14**.
-            </li>
-            <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                Finished all high school programming classes in <strong class="text-cyan-400-dark text-cyan-400-light">3 weeks</strong> instead of 3 years at **13**.
-            </li>
-            <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                Got accepted as a summer research student with <strong class="text-cyan-400-dark text-cyan-400-light">100% scholarship</strong>.
-            </li>
-            <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                Explored freelancing projects at **15**.
-            </li>
-            <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                Published a speculative theory on **Quantum Temporal Lattice** (IJSAT).
-            </li>
-            <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                Explored what happens when a hole is made in a **Gaussian body** doing complex calculations and reached a conclusion (praised by many).
-            </li>
-            <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                Studying chinese since **16**.
-            </li>
+        <ul class="achievement-list text-gray-400-dark text-gray-600 text-base space-y-2">
+            <li><strong class="font-semibold text-white-dark text-gray-800">Silver medalist</strong> in a math competition.</li>
+            <li>Gained my first bios troubleshooting job at <strong class="font-semibold text-white-dark text-gray-800">11 y/o</strong>.</li>
+            <li>Got enrolled in a <strong class="font-semibold text-white-dark text-gray-800">Computer Software Diploma Program</strong> at <strong class="font-semibold text-white-dark text-gray-800">12 y/o</strong>.</li>
         </ul>
     </section>
 
     <!-- EXPERIENCE SECTION -->
     <section class="experience" id="experience-section">
         <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-6">Experience</h2>
-        
-    <!-- 1. Alzeural Entry (Clickable/Toggle) - inline logo so title sits next to image -->
-    <div id="alzeural-entry" onclick="toggleDetails('alzeural-details')" 
-        class="mb-4 cursor-pointer">
-            <!-- Inline logo and content wrapper -->
-            <div class="flex items-start gap-3">
-                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/alzie.jpg"
-                     alt="Alzeural Logo"
-                     class="inline-logo"
-                     onerror="this.onerror=null;this.src='https://placehold.co/60x60/1f2937/ffffff?text=Logo';">
-
+        <div onclick="openModal('alzeural-modal')" class="mb-4 cursor-pointer p-4 rounded-lg hover:bg-gray-800/50 transition-colors">
+            <div class="flex items-start gap-4">
+                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/alzie.jpg" alt="Alzeural Logo" class="inline-logo">
                 <div class="flex-1">
                     <div class="flex items-center justify-between">
-                        <h3 class="text-xl font-semibold text-white-dark text-gray-800">
-                            Alzeural
-                        </h3>
+                        <h3 class="text-xl font-semibold text-white-dark text-gray-800">Alzeural</h3>
                         <span class="text-sm text-gray-400-dark text-gray-600">Sep 2025 - Present</span>
                     </div>
-                    <p class="text-lg text-cyan-400-dark text-cyan-400-light">
-                        Open Source Maintainer
-                    </p>
+                    <p class="text-lg text-gray-400-dark text-gray-500">Open Source Maintainer</p>
                 </div>
-            </div>
-
-            <!-- Collapsible Details -->
-            <div id="alzeural-details" class="hidden pt-3">
-                <p class="text-base text-gray-400-dark text-gray-600 border-l-2 border-cyan-400/50 pl-4">
-                    Managed the whole Alzeural's GitHub repository from guiding other contributors to merging requests and raising issues.
-                </p>
             </div>
         </div>
-
-    <!-- 2. Plaksha University Entry (Clickable/Toggle) - inline logo like Alzeural -->
-    <div id="plaksha-entry" onclick="toggleDetails('plaksha-details')"
-        class="mb-4 cursor-pointer">
-            <!-- Inline logo + content -->
-            <div class="flex items-start gap-3">
-                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/plaksha.webp"
-                     alt="Plaksha University Logo"
-                     class="inline-logo"
-                     onerror="this.onerror=null;this.src='https://placehold.co/60x60/1f2937/ffffff?text=Logo';">
-
+        <div onclick="openModal('plaksha-modal')" class="mb-4 cursor-pointer p-4 rounded-lg hover:bg-gray-800/50 transition-colors">
+            <div class="flex items-start gap-4">
+                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/plaksha.webp" alt="Plaksha University Logo" class="inline-logo">
                 <div class="flex-1">
                     <div class="flex items-center justify-between">
-                        <h3 class="text-xl font-semibold text-white-dark text-gray-800">
-                            Plaksha University
-                        </h3>
+                        <h3 class="text-xl font-semibold text-white-dark text-gray-800">Plaksha University</h3>
                         <span class="text-sm text-gray-400-dark text-gray-600">May 2022 - June 2022</span>
                     </div>
-                    <p class="text-lg text-cyan-400-dark text-cyan-400-light">
-                        Summer Research Student
-                    </p>
+                    <p class="text-lg text-gray-400-dark text-gray-500">Summer Research Student</p>
                 </div>
-            </div>
-
-            <!-- Collapsible Details -->
-            <div id="plaksha-details" class="hidden pt-3">
-                <p class="text-base text-gray-400-dark text-gray-600 border-l-2 border-cyan-400/50 pl-4">
-                    Led a team of four to build the Marvin Project.
-                </p>
             </div>
         </div>
     </section>
-    <!-- END EXPERIENCE SECTION -->
 
     <!-- Education Section -->
     <section class="education" id="education-section">
         <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-6">Education</h2>
         <div class="flex items-start space-x-4 mb-4">
-            <!-- Logo from provided URL -->
-            <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/iitm.png" 
-                 alt="IIT Madras Logo" 
-                 class="w-16 h-16 flex-shrink-0 mt-1 object-contain rounded-[20px] border-2 border-cyan-400-dark border-cyan-400-light"
-                 onerror="this.onerror=null;this.src='https://placehold.co/64x64/1f2937/ffffff?text=Logo';">
-            <!-- Details -->
+            <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/iitm.png" alt="IIT Madras Logo" class="w-16 h-16 flex-shrink-0 mt-1 object-contain rounded-[20px] border-2 border-gray-600">
             <div class="flex-1">
                 <div class="flex items-center justify-between">
-                    <h3 class="text-xl font-semibold text-white-dark">
-                        IIT Madras
-                    </h3>
+                    <h3 class="text-xl font-semibold text-white-dark">IIT Madras</h3>
                     <span class="text-sm text-gray-400-dark text-gray-600">2025-2029</span>
                 </div>
-                <p class="text-base text-white-dark mt-1">
-                    BS Data Science and Statistics
-                </p>
+                <p class="text-base text-white-dark mt-1">BS Data Science and Statistics</p>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section - COLOR CHANGED TO MONOCHROME -->
+    <!-- Skills Section -->
     <section class="skills" id="skills-section">
         <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-4">Key Skills</h2>
         <div class="flex flex-wrap gap-2 text-sm">
-            <!-- Skills tags updated for black/white style -->
-            <span class="px-3 py-1 rounded-full border
-                         bg-gray-100 text-gray-800 border-gray-300
-                         dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Python</span>
-            <span class="px-3 py-1 rounded-full border
-                         bg-gray-100 text-gray-800 border-gray-300
-                         dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">CUDA</span>
-            <span class="px-3 py-1 rounded-full border
-                         bg-gray-100 text-gray-800 border-gray-300
-                         dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">LLMs (Large Language Models)</span>
-            <span class="px-3 py-1 rounded-full border
-                         bg-gray-100 text-gray-800 border-gray-300
-                         dark:bg-gray-700/50 dark:text-gray-200 dark:border--gray-600">Web Development (React, Angular, JS)</span>
-            <span class="px-3 py-1 rounded-full border
-                         bg-gray-100 text-gray-800 border-gray-300
-                         dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Reverse Engineering</span>
+            <span class="px-3 py-1 rounded-full border bg-gray-100 text-gray-800 border-gray-300 dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Python</span>
+            <span class="px-3 py-1 rounded-full border bg-gray-100 text-gray-800 border-gray-300 dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">CUDA</span>
+            <span class="px-3 py-1 rounded-full border bg-gray-100 text-gray-800 border-gray-300 dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">LLMs</span>
+            <span class="px-3 py-1 rounded-full border bg-gray-100 text-gray-800 border-gray-300 dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Web Development</span>
+            <span class="px-3 py-1 rounded-full border bg-gray-100 text-gray-800 border-gray-300 dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Reverse Engineering</span>
         </div>
     </section>
-
 </div>
+
+<!-- Modals -->
+<div id="alzeural-modal" class="modal">
+    <div class="modal-content">
+        <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/alzie.jpg" alt="Alzeural Logo" class="modal-image">
+        <div class="modal-header">
+            <div class="modal-header-text">
+                <h3>Alzeural</h3>
+                <p>Open Source Maintainer</p>
+            </div>
+            <button onclick="closeModal('alzeural-modal')" class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Managed the whole Alzeural's GitHub repository from guiding other contributors to merging requests and raising issues.</p>
+        </div>
+    </div>
+</div>
+
+<div id="plaksha-modal" class="modal">
+    <div class="modal-content">
+        <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/plaksha.webp" alt="Plaksha University Logo" class="modal-image">
+        <div class="modal-header">
+            <div class="modal-header-text">
+                <h3>Plaksha University</h3>
+                <p>Summer Research Student</p>
+            </div>
+            <button onclick="closeModal('plaksha-modal')" class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Led a team of four to build the Marvin Project.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Modal Logic
+    function openModal(modalId) {
+        document.getElementById(modalId).classList.add('active');
+    }
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.remove('active');
+    }
+    window.addEventListener('click', function(event) {
+        const modals = document.getElementsByClassName('modal');
+        for (let modal of modals) {
+            if (event.target === modal) {
+                modal.classList.remove('active');
+            }
+        }
+    });
+</script>
