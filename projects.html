@@ -3,25 +3,42 @@ layout: default
 title: Projects
 ---
 
-<div id="projects-page" class="space-y-12 pt-4">
+<div class="space-y-12 pt-4">
     <section class="projects" id="projects-section">
-        <h2 class="text-3xl font-bold text-white-dark text-gray-700 mb-6 pb-2 border-b border-gray-700-dark border-gray-200-light">My Notable Work</h2>
-        <ul class="list-none space-y-0 text-lg">
+        <!-- New Heading -->
+        <h2 class="text-3xl font-bold text-white-dark text-gray-700 mb-6 pb-2 border-b border-gray-700-dark border-gray-200-light">Some cool projects I have worked on</h2>
+        
+        <!-- PROJECTS GRID CONTAINER -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
             {% for project in site.projects %}
-            <li>
-                <a href="{{ project.url }}" class="blog-post-link text-gray-300-dark text-gray-700">
-                    <div class="project-item">
-                        <h3 class="text-xl font-semibold transition-colors duration-100 text-white-dark text-gray-800">{{ project.title }}</h3>
-                        <div class="project-image-container">
-                            <img src="{{ project.image }}" alt="{{ project.title }}" class="project-image">
-                            <div class="project-image-overlay">
-                                <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-                            </div>
+            <div class="project-card-item group relative p-4 rounded-xl border border-gray-700-dark border-gray-200-light shadow-lg transition-all duration-300 overflow-hidden">
+                
+                <!-- Project Content -->
+                <div class="space-y-3">
+                    <!-- Image with brightness hover effect -->
+                    <a href="{{ project.url | relative_url }}" aria-label="View Project: {{ project.title }}">
+                        <div class="project-image-wrapper rounded-[15px] overflow-hidden">
+                            <img src="{{ project.image }}" 
+                                 alt="{{ project.title }} thumbnail"
+                                 class="project-image w-full h-32 object-cover shadow-md transition-all duration-300 transform group-hover:scale-105">
                         </div>
-                    </div>
-                </a>
-            </li>
+                    </a>
+                    
+                    <!-- Project Title -->
+                    <h3 class="text-xl font-semibold">
+                       <a href="{{ project.url | relative_url }}" class="text-white-dark text-gray-800 hover:text-cyan-400-dark hover:text-cyan-400-light transition-colors">
+                           {{ project.title }}
+                        </a>
+                    </h3>
+
+                    <p class="text-sm text-gray-500-dark text-gray-500 line-clamp-3">
+                        {{ project.content | strip_html | truncatewords: 25 }}
+                    </p>
+                </div>
+            </div>
             {% endfor %}
-        </ul>
+
+        </div>
     </section>
 </div>

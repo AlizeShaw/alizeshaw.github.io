@@ -1,369 +1,209 @@
-
-<!DOCTYPE html>
-<html lang="en" class="dark"> 
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dishana Rupani - Developer Building the Future</title>
+---
+layout: default
+title: Home
+---
+<div id="home-page" class="space-y-12">
     
-    <!-- Load Tailwind CSS for responsiveness and styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Link to custom stylesheet -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<!-- Increased bottom padding to prevent content being hidden behind the fixed navbar -->
-<body class="pb-20 sm:pb-24"> 
-
-    <!-- Fixed Top-Right Theme Toggle -->
-    <nav class="fixed top-4 right-4 z-50">
-        <div class="flex items-center bg-gray-800/90 navbar-bg-dark backdrop-blur-sm p-2 border border-gray-700 navbar-border-dark navbar-rounded">
-            <button id="theme-toggle-top" aria-label="Toggle dark mode" class="interactive-link nav-icon-dark text-gray-500-light p-1 rounded-md hover:bg-white/10">
-                <!-- Moon Icon (Dark Mode) -->
-                <svg class="w-5 h-5" id="moon-icon-top" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-                <!-- Sun Icon (Light Mode) -->
-                <svg class="w-5 h-5 hidden" id="sun-icon-top" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-            </button>
+    <!-- Header (Left-Aligned) -->
+    <header id="top" class="pb-6 border-b border-gray-700-dark border-gray-200-light">
+        <div class="flex items-center gap-4 mb-4">
+            <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/avatar1.jpg" 
+                 alt="Alize Shaw Logo" 
+                 class="w-16 h-16 rounded-[20px] border-2 border-cyan-400-dark border-cyan-400-light object-cover transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-400/20">
+            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-white-dark text-gray-800">
+                Dishana Rupani
+            </h1>
         </div>
-    </nav>
+        <p class="text-lg text-cyan-400-dark text-cyan-400-light mt-2">
+            Driven by memories fueled by ambitions.
+        </p>
+        
+        <!-- Social Media Icons Container (Kept in Header) -->
+        <div class="flex space-x-4 mt-4 social-link">
+            <!-- GitHub Link (Replace YOUR_GITHUB_PROFILE_URL) -->
+            <div class="relative group">
+                <a href="YOUR_GITHUB_PROFILE_URL" target="_blank" aria-label="GitHub Profile" class="interactive-link social-link w-6 h-6 overflow-hidden rounded-[10px] block hover:scale-110 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/github.jpg" alt="GitHub" class="w-full h-full object-cover">
+                </a>
+                <!-- Tooltip -->
+                <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    GitHub
+                </span>
+            </div>
+            <!-- LinkedIn Link (Replace YOUR_LINKEDIN_PROFILE_URL) -->
+            <div class="relative group">
+                <a href="YOUR_LINKEDIN_PROFILE_URL" target="_blank" aria-label="LinkedIn Profile" class="interactive-link social-link w-6 h-6 overflow-hidden rounded-[10px] block hover:scale-110 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/linkedin%20(2).png" alt="LinkedIn" class="w-full h-full object-cover">
+                </a>
+                <!-- Tooltip -->
+                <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    LinkedIn
+                </span>
+            </div>
+            <!-- X/Twitter Link (Replace YOUR_X_PROFILE_URL) -->
+            <div class="relative group">
+                <a href="YOUR_X_PROFILE_URL" target="_blank" aria-label="X/Twitter Profile" class="interactive-link social-link w-6 h-6 overflow-hidden rounded-[10px] block hover:scale-110 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/x.png" alt="X/Twitter" class="w-full h-full object-cover">
+                </a>
+                <!-- Tooltip -->
+                <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    X
+                </span>
+            </div>
+        </div>
+    </header>
     
-    <!-- Main Content Wrapper: Centers the content container, left-aligned content -->
-    <div class="flex items-start justify-center p-6 sm:p-10">
-        <!-- Content Container (Handles all three pages: Home, Blog, Projects) -->
-        <div class="w-full max-w-3xl text-left mt-10" id="page-content-wrapper">
-            
-            <!-- 1. HOME PAGE CONTENT (Default View) -->
-            <div id="home-page" class="space-y-12">
-                
-                <!-- Header (Left-Aligned) -->
-                <header id="top" class="pb-6 border-b border-gray-700-dark border-gray-200-light">
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/avatar1.jpg" 
-                             alt="Alize Shaw Logo" 
-                             class="w-16 h-16 rounded-[20px] border-2 border-cyan-400-dark border-cyan-400-light object-cover transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-400/20">
-                        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-white-dark text-gray-800">
-                            Dishana Rupani
-                        </h1>
+    <!-- Achievements Section (Moved from bottom) -->
+    <section class="achievements">
+        <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-6">Achievements</h2>
+        <!-- Applied custom list style class 'achievement-list' -->
+        <ul class="achievement-list text-gray-400-dark text-gray-600 text-base">
+            <li class="hover-cyan-dark hover-cyan-light transition-colors">
+                <strong class="text-cyan-400-dark text-cyan-400-light">Silver medalist</strong> in a math competition.
+            </li>
+            <li class="hover-cyan-dark hover-cyan-light transition-colors">
+                Gained my first bios troubleshooting job at **11 y/o**.
+            </li>
+            <li class="hover-cyan-dark hover-cyan-light transition-colors">
+                Got enrolled in a **Computer Software Diploma Program** at **12 y/o**.
+            </li>
+            <li class="hover-cyan-dark hover-cyan-light transition-colors">
+                Got a part-time job at a hardware solutions place, fixed issues of more than **100 clients** at **14**.
+            </li>
+            <li class="hover-cyan-dark hover-cyan-light transition-colors">
+                Finished all high school programming classes in <strong class="text-cyan-400-dark text-cyan-400-light">3 weeks</strong> instead of 3 years at **13**.
+            </li>
+            <li class="hover-cyan-dark hover-cyan-light transition-colors">
+                Got accepted as a summer research student with <strong class="text-cyan-400-dark text-cyan-400-light">100% scholarship</strong>.
+            </li>
+            <li class="hover-cyan-dark hover-cyan-light transition-colors">
+                Explored freelancing projects at **15**.
+            </li>
+            <li class="hover-cyan-dark hover-cyan-light transition-colors">
+                Published a speculative theory on **Quantum Temporal Lattice** (IJSAT).
+            </li>
+            <li class="hover-cyan-dark hover-cyan-light transition-colors">
+                Explored what happens when a hole is made in a **Gaussian body** doing complex calculations and reached a conclusion (praised by many).
+            </li>
+            <li class="hover-cyan-dark hover-cyan-light transition-colors">
+                Studying chinese since **16**.
+            </li>
+        </ul>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="experience" id="experience-section">
+        <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-6">Experience</h2>
+        
+    <!-- 1. Alzeural Entry (Clickable/Toggle) - inline logo so title sits next to image -->
+    <div id="alzeural-entry" onclick="toggleDetails('alzeural-details')" 
+        class="mb-4 cursor-pointer">
+            <!-- Inline logo and content wrapper -->
+            <div class="flex items-start gap-3">
+                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/alzie.jpg"
+                     alt="Alzeural Logo"
+                     class="inline-logo"
+                     onerror="this.onerror=null;this.src='https://placehold.co/60x60/1f2937/ffffff?text=Logo';">
+
+                <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-white-dark text-gray-800">
+                            Alzeural
+                        </h3>
+                        <span class="text-sm text-gray-400-dark text-gray-600">Sep 2025 - Present</span>
                     </div>
-                    <p class="text-lg text-cyan-400-dark text-cyan-400-light mt-2">
-                        Driven by memories fueled by ambitions.
+                    <p class="text-lg text-cyan-400-dark text-cyan-400-light">
+                        Open Source Maintainer
                     </p>
-                    
-                    <!-- Social Media Icons Container (Kept in Header) -->
-                    <div class="flex space-x-4 mt-4 social-link">
-                        <!-- GitHub Link (Replace YOUR_GITHUB_PROFILE_URL) -->
-                        <div class="relative group">
-                            <a href="YOUR_GITHUB_PROFILE_URL" target="_blank" aria-label="GitHub Profile" class="interactive-link social-link w-6 h-6 overflow-hidden rounded-[10px] block hover:scale-110 transition-transform duration-300">
-                                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/github.jpg" alt="GitHub" class="w-full h-full object-cover">
-                            </a>
-                            <!-- Tooltip -->
-                            <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                                GitHub
-                            </span>
-                        </div>
-                        <!-- LinkedIn Link (Replace YOUR_LINKEDIN_PROFILE_URL) -->
-                        <div class="relative group">
-                            <a href="YOUR_LINKEDIN_PROFILE_URL" target="_blank" aria-label="LinkedIn Profile" class="interactive-link social-link w-6 h-6 overflow-hidden rounded-[10px] block hover:scale-110 transition-transform duration-300">
-                                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/linkedin%20(2).png" alt="LinkedIn" class="w-full h-full object-cover">
-                            </a>
-                            <!-- Tooltip -->
-                            <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                                LinkedIn
-                            </span>
-                        </div>
-                        <!-- X/Twitter Link (Replace YOUR_X_PROFILE_URL) -->
-                        <div class="relative group">
-                            <a href="YOUR_X_PROFILE_URL" target="_blank" aria-label="X/Twitter Profile" class="interactive-link social-link w-6 h-6 overflow-hidden rounded-[10px] block hover:scale-110 transition-transform duration-300">
-                                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/x.png" alt="X/Twitter" class="w-full h-full object-cover">
-                            </a>
-                            <!-- Tooltip -->
-                            <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                                X
-                            </span>
-                        </div>
-                    </div>
-                </header>
-                
-                <!-- Achievements Section (Moved from bottom) -->
-                <section class="achievements">
-                    <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-6">Achievements</h2>
-                    <!-- Applied custom list style class 'achievement-list' -->
-                    <ul class="achievement-list text-gray-400-dark text-gray-600 text-base">
-                        <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            <strong class="text-cyan-400-dark text-cyan-400-light">Silver medalist</strong> in a math competition.
-                        </li>
-                        <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Gained my first bios troubleshooting job at **11 y/o**.
-                        </li>
-                        <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Got enrolled in a **Computer Software Diploma Program** at **12 y/o**.
-                        </li>
-                        <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Got a part-time job at a hardware solutions place, fixed issues of more than **100 clients** at **14**.
-                        </li>
-                        <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Finished all high school programming classes in <strong class="text-cyan-400-dark text-cyan-400-light">3 weeks</strong> instead of 3 years at **13**.
-                        </li>
-                        <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Got accepted as a summer research student with <strong class="text-cyan-400-dark text-cyan-400-light">100% scholarship</strong>.
-                        </li>
-                        <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Explored freelancing projects at **15**.
-                        </li>
-                        <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Published a speculative theory on **Quantum Temporal Lattice** (IJSAT).
-                        </li>
-                        <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Explored what happens when a hole is made in a **Gaussian body** doing complex calculations and reached a conclusion (praised by many).
-                        </li>
-                        <li class="hover-cyan-dark hover-cyan-light transition-colors">
-                            Studying chinese since **16**.
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- EXPERIENCE SECTION -->
-                <section class="experience" id="experience-section">
-                    <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-6">Experience</h2>
-                    
-                <!-- 1. Alzeural Entry (Clickable/Toggle) - inline logo so title sits next to image -->
-                <div id="alzeural-entry" onclick="toggleDetails('alzeural-details')" 
-                    class="mb-4 cursor-pointer">
-                        <!-- Inline logo and content wrapper -->
-                        <div class="flex items-start gap-3">
-                            <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/alzie.jpg"
-                                 alt="Alzeural Logo"
-                                 class="inline-logo"
-                                 onerror="this.onerror=null;this.src='https://placehold.co/60x60/1f2937/ffffff?text=Logo';">
-
-                            <div class="flex-1">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-xl font-semibold text-white-dark text-gray-800">
-                                        Alzeural
-                                    </h3>
-                                    <span class="text-sm text-gray-400-dark text-gray-600">Sep 2025 - Present</span>
-                                </div>
-                                <p class="text-lg text-cyan-400-dark text-cyan-400-light">
-                                    Open Source Maintainer
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Collapsible Details -->
-                        <div id="alzeural-details" class="hidden pt-3">
-                            <p class="text-base text-gray-400-dark text-gray-600 border-l-2 border-cyan-400/50 pl-4">
-                                Managed the whole Alzeural's GitHub repository from guiding other contributors to merging requests and raising issues.
-                            </p>
-                        </div>
-                    </div>
-
-                <!-- 2. Plaksha University Entry (Clickable/Toggle) - inline logo like Alzeural -->
-                <div id="plaksha-entry" onclick="toggleDetails('plaksha-details')"
-                    class="mb-4 cursor-pointer">
-                        <!-- Inline logo + content -->
-                        <div class="flex items-start gap-3">
-                            <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/plaksha.webp"
-                                 alt="Plaksha University Logo"
-                                 class="inline-logo"
-                                 onerror="this.onerror=null;this.src='https://placehold.co/60x60/1f2937/ffffff?text=Logo';">
-
-                            <div class="flex-1">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-xl font-semibold text-white-dark text-gray-800">
-                                        Plaksha University
-                                    </h3>
-                                    <span class="text-sm text-gray-400-dark text-gray-600">May 2022 - June 2022</span>
-                                </div>
-                                <p class="text-lg text-cyan-400-dark text-cyan-400-light">
-                                    Summer Research Student
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Collapsible Details -->
-                        <div id="plaksha-details" class="hidden pt-3">
-                            <p class="text-base text-gray-400-dark text-gray-600 border-l-2 border-cyan-400/50 pl-4">
-                                Led a team of four to build the Marvin Project.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <!-- END EXPERIENCE SECTION -->
-
-                <!-- Education Section -->
-                <section class="education" id="education-section">
-                    <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-6">Education</h2>
-                    <div class="flex items-start space-x-4 mb-4">
-                        <!-- Logo from provided URL -->
-                        <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/iitm.png" 
-                             alt="IIT Madras Logo" 
-                             class="w-16 h-16 flex-shrink-0 mt-1 object-contain rounded-[20px] border-2 border-cyan-400-dark border-cyan-400-light"
-                             onerror="this.onerror=null;this.src='https://placehold.co/64x64/1f2937/ffffff?text=Logo';">
-                        <!-- Details -->
-                        <div class="flex-1">
-                            <div class="flex items-center justify-between">
-                                <h3 class="text-xl font-semibold text-white-dark">
-                                    IIT Madras
-                                </h3>
-                                <span class="text-sm text-gray-400-dark text-gray-600">2025-2029</span>
-                            </div>
-                            <p class="text-base text-white-dark mt-1">
-                                BS Data Science and Statistics
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Skills Section - COLOR CHANGED TO MONOCHROME -->
-                <section class="skills" id="skills-section">
-                    <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-4">Key Skills</h2>
-                    <div class="flex flex-wrap gap-2 text-sm">
-                        <!-- Skills tags updated for black/white style -->
-                        <span class="px-3 py-1 rounded-full border
-                                     bg-gray-100 text-gray-800 border-gray-300
-                                     dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Python</span>
-                        <span class="px-3 py-1 rounded-full border
-                                     bg-gray-100 text-gray-800 border-gray-300
-                                     dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">CUDA</span>
-                        <span class="px-3 py-1 rounded-full border
-                                     bg-gray-100 text-gray-800 border-gray-300
-                                     dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">LLMs (Large Language Models)</span>
-                        <span class="px-3 py-1 rounded-full border
-                                     bg-gray-100 text-gray-800 border-gray-300
-                                     dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Web Development (React, Angular, JS)</span>
-                        <span class="px-3 py-1 rounded-full border
-                                     bg-gray-100 text-gray-800 border-gray-300
-                                     dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Reverse Engineering</span>
-                    </div>
-                </section>
-
-            </div>
-            
-            <!-- 2. BLOG PAGE CONTENT (Initially Hidden) -->
-            <div id="blog-page" class="space-y-12 hidden pt-4">
-                <section class="blog" id="blog-section">
-                    <h2 class="text-3xl font-bold text-white-dark text-gray-700 mb-6 pb-2 border-b border-gray-700-dark border-gray-200-light">The Latest Thoughts</h2>
-                    <ul class="list-none space-y-0 text-lg">
-                        <li>
-                            <a href="#" class="blog-post-link text-gray-300-dark text-gray-700">
-                                <h3 class="text-xl font-semibold transition-colors duration-100 text-white-dark text-gray-800">If you're 18 you should be sidequestmaxxing</h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500">September 4, 2025</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="blog-post-link text-gray-300-dark text-gray-700">
-                                <h3 class="text-xl font-semibold transition-colors duration-100 text-white-dark text-gray-800">All of my previous projects</h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500">May 10, 2024</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="blog-post-link text-gray-300-dark text-gray-700">
-                                <h3 class="text-xl font-semibold transition-colors duration-100 text-white-dark text-gray-800">My annoying situation with my high school and internships</h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500">April 1, 2024</p>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
+                </div>
             </div>
 
-            <!-- 3. PROJECTS PAGE CONTENT (Initially Hidden) - UPDATED TO GRID LAYOUT -->
-            <div id="projects-page" class="space-y-12 hidden pt-4">
-                <section class="projects" id="projects-section">
-                    <!-- New Heading -->
-                    <h2 class="text-3xl font-bold text-white-dark text-gray-700 mb-6 pb-2 border-b border-gray-700-dark border-gray-200-light">Some cool projects I have worked on</h2>
-                    
-                    <!-- PROJECTS GRID CONTAINER: 1 column on mobile, 2 columns on medium, 3 columns on large -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        
-                        {% for project in site.projects %}
-                        <div class="project-card-item group relative p-4 rounded-xl border border-gray-700-dark border-gray-200-light shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 overflow-hidden cursor-pointer">
-                            <!-- Clickable Overlay Link (Covers the entire card on hover) -->
-                            <a href="{{ project.url }}" target="_blank" aria-label="View Project: {{ project.title }}" 
-                               class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
-                                <!-- Eye Icon -->
-                                <svg class="w-10 h-10 text-white animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
-                                </svg>
-                            </a>
-
-                            <!-- Project Content -->
-                            <div class="space-y-3">
-                                <!-- Image Placeholder (15px rounded) -->
-                                <img src="{{ project.image }}" 
-                                     alt="{{ project.title }} thumbnail"
-                                     class="w-full h-32 object-cover rounded-[15px] shadow-md transition-opacity duration-300">
-                                
-                                <h3 class="text-xl font-semibold text-white-dark text-gray-800">
-                                    {{ project.title }}
-                                </h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500 line-clamp-3">
-                                    {{ project.content | strip_html | truncatewords: 25 }}
-                                </p>
-                                
-                                <!-- GitHub Link (Shows when not hovered for direct GitHub access) -->
-                                <div class="pt-1 github-link-container">
-                                    <a href="{{ project.github }}" target="_blank" aria-label="GitHub Repository: {{ project.title }}" class="interactive-link social-link hover:text-cyan-400-dark dark:hover:text-cyan-400-dark transition-colors">
-                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.37-1-3.35.45-1.03.48-2.05-.12-3.04 0 0-1.03-.35-3.41 1.05A7.17 7.17 0 0 0 12 5.5c-1.12 0-2.24.2-3.3.61C5.54 3.3 4.5 3.65 4.5 3.65c-.6 1-.57 2.02-.12 3.04-.73.98-1.08 2.08-1 3.35 0 3.5 3 5.5 6 5.5-.39.42-.75 1.05-.75 2v4"/></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-
-                    </div>
-                </section>
+            <!-- Collapsible Details -->
+            <div id="alzeural-details" class="hidden pt-3">
+                <p class="text-base text-gray-400-dark text-gray-600 border-l-2 border-cyan-400/50 pl-4">
+                    Managed the whole Alzeural's GitHub repository from guiding other contributors to merging requests and raising issues.
+                </p>
             </div>
-
         </div>
 
-    </div>
+    <!-- 2. Plaksha University Entry (Clickable/Toggle) - inline logo like Alzeural -->
+    <div id="plaksha-entry" onclick="toggleDetails('plaksha-details')"
+        class="mb-4 cursor-pointer">
+            <!-- Inline logo + content -->
+            <div class="flex items-start gap-3">
+                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/plaksha.webp"
+                     alt="Plaksha University Logo"
+                     class="inline-logo"
+                     onerror="this.onerror=null;this.src='https://placehold.co/60x60/1f2937/ffffff?text=Logo';">
 
-    <!-- Fixed Bottom Navbar -->
-    <nav class="fixed bottom-0 left-0 right-0 z-50 p-4 flex justify-center">
-        <!-- The width has been reduced to max-w-[180px] and the background changed to bg-black/95 -->
-        <div class="flex items-center justify-around bg-black/95 backdrop-blur-sm py-2 px-4 border border-gray-700 navbar-border-dark navbar-rounded max-w-[180px] w-full">
-            
-            <!-- Home Link Group -->
-            <div class="relative group flex justify-center">
-                <!-- Home Link -->
-                <a href="#home" aria-label="Home" id="nav-home" class="interactive-link nav-icon-dark nav-interactive-icon text-cyan-400-dark text-gray-500-light p-2 rounded-md hover:bg-white/10">
-                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                </a>
-                <!-- Home Text Label (Tooltip) -->
-                <span class="absolute bottom-full mb-2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
-                    Home
-                </span>
+                <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-white-dark text-gray-800">
+                            Plaksha University
+                        </h3>
+                        <span class="text-sm text-gray-400-dark text-gray-600">May 2022 - June 2022</span>
+                    </div>
+                    <p class="text-lg text-cyan-400-dark text-cyan-400-light">
+                        Summer Research Student
+                    </p>
+                </div>
             </div>
 
-            <!-- Blog Link Group -->
-            <div class="relative group flex justify-center">
-                <!-- Blog Link -->
-                <a href="#blog" aria-label="Blog" id="nav-blog" class="interactive-link nav-icon-dark nav-interactive-icon text-gray-500-light p-2 rounded-md hover:bg-white/10">
-                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
-                </a>
-                <!-- Blog Text Label (Tooltip) -->
-                <span class="absolute bottom-full mb-2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
-                    Blog
-                </span>
+            <!-- Collapsible Details -->
+            <div id="plaksha-details" class="hidden pt-3">
+                <p class="text-base text-gray-400-dark text-gray-600 border-l-2 border-cyan-400/50 pl-4">
+                    Led a team of four to build the Marvin Project.
+                </p>
             </div>
-            
-            <!-- Projects Link Group -->
-            <div class="relative group flex justify-center">
-                <!-- Projects Link -->
-                <a href="#projects" aria-label="Projects" id="nav-projects" class="interactive-link nav-icon-dark nav-interactive-icon text-gray-500-light p-2 rounded-md hover:bg-white/10">
-                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 4.17 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
-                </a>
-                <!-- Projects Text Label (Tooltip) -->
-                <span class="absolute bottom-full mb-2 px-2 py-1 text-xs font-medium text-white bg-gray-700 rounded-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
-                    Projects
-                </span>
-            </div>
-            
         </div>
-    </nav>
+    </section>
+    <!-- END EXPERIENCE SECTION -->
 
-    <!-- Link to custom JavaScript -->
-    <script src="script.js"></script>
-</body>
-</html>
+    <!-- Education Section -->
+    <section class="education" id="education-section">
+        <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-6">Education</h2>
+        <div class="flex items-start space-x-4 mb-4">
+            <!-- Logo from provided URL -->
+            <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/iitm.png" 
+                 alt="IIT Madras Logo" 
+                 class="w-16 h-16 flex-shrink-0 mt-1 object-contain rounded-[20px] border-2 border-cyan-400-dark border-cyan-400-light"
+                 onerror="this.onerror=null;this.src='https://placehold.co/64x64/1f2937/ffffff?text=Logo';">
+            <!-- Details -->
+            <div class="flex-1">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-semibold text-white-dark">
+                        IIT Madras
+                    </h3>
+                    <span class="text-sm text-gray-400-dark text-gray-600">2025-2029</span>
+                </div>
+                <p class="text-base text-white-dark mt-1">
+                    BS Data Science and Statistics
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section - COLOR CHANGED TO MONOCHROME -->
+    <section class="skills" id="skills-section">
+        <h2 class="text-2xl font-bold text-white-dark text-gray-700 mb-4">Key Skills</h2>
+        <div class="flex flex-wrap gap-2 text-sm">
+            <!-- Skills tags updated for black/white style -->
+            <span class="px-3 py-1 rounded-full border
+                         bg-gray-100 text-gray-800 border-gray-300
+                         dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Python</span>
+            <span class="px-3 py-1 rounded-full border
+                         bg-gray-100 text-gray-800 border-gray-300
+                         dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">CUDA</span>
+            <span class="px-3 py-1 rounded-full border
+                         bg-gray-100 text-gray-800 border-gray-300
+                         dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">LLMs (Large Language Models)</span>
+            <span class="px-3 py-1 rounded-full border
+                         bg-gray-100 text-gray-800 border-gray-300
+                         dark:bg-gray-700/50 dark:text-gray-200 dark:border--gray-600">Web Development (React, Angular, JS)</span>
+            <span class="px-3 py-1 rounded-full border
+                         bg-gray-100 text-gray-800 border-gray-300
+                         dark:bg-gray-700/50 dark:text-gray-200 dark:border-gray-600">Reverse Engineering</span>
+        </div>
+    </section>
+
+</div>

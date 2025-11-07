@@ -24,7 +24,6 @@ html.dark .text-cyan-400-dark { color: #22d3ee; } /* Cyan-400 for dark mode acce
 html.dark .text-gray-500-dark { color: #9ca3af; } /* gray-400 for dark mode links */
 html.dark .border-gray-700-dark { border-color: #374151; } /* gray-700 for dark mode borders */
 html.dark .hover-cyan-dark:hover { color: #22d3ee; } /* Strong cyan hover effect */
-/* Removed .navbar-bg-dark as it is now handled by utility class bg-black/95 */
 html.dark .navbar-border-dark { border-color: #374151; }
 html.dark .nav-icon-dark { color: #d1d5db; } 
 html.dark .nav-icon-dark:hover { color: #22d3ee; } 
@@ -73,28 +72,7 @@ html:not(.dark) .separator {
     z-index: 10;
 }
 
-/* --- NEW STYLES FOR LOGO OVERLAP EFFECT (REQUEST 1 & 2) --- */
-.logo-overlap-card {
-    position: relative;
-    border-radius: 0.75rem; /* rounded-xl */
-    /* Adjust padding to shift content and provide space for the absolute logo */
-    padding: 1rem 1rem 1rem 2.5rem; 
-    padding-top: 1.5rem; 
-    transition: all 0.3s ease-in-out; 
-}
-.logo-overlap-image {
-    position: absolute;
-    top: -35px; /* Half of 40px height */
-    left: 10px; /* Shifted even more to the right */
-    z-index: 20; 
-    width: 60px; 
-    height: 60px;
-    border-radius: 12px; /* Decreased border radius */
-    border: 2px solid;
-    object-fit: cover;
-}
-
-/* Inline variant for logos used inside the card flow (non-absolute) */
+/* --- STYLES FOR LOGO OVERLAP EFFECT --- */
 .inline-logo {
     width: 60px;
     height: 60px;
@@ -102,22 +80,6 @@ html:not(.dark) .separator {
     border-radius: 12px;
     border: 2px solid;
     object-fit: cover;
-}
-/* Dark Mode Overlap Styles */
-html.dark .logo-overlap-card {
-    border-color: #374151; /* gray-700-dark */
-}
-html.dark .logo-overlap-image {
-    background-color: #111827; /* Deep dark background */
-    border-color: #22d3ee; /* Cyan-400-dark */
-}
-/* Light Mode Overlap Styles */
-html:not(.dark) .logo-overlap-card {
-    border-color: #e5e7eb; /* gray-200-light */
-}
-html:not(.dark) .logo-overlap-image {
-    background-color: #fff; /* White background */
-    border-color: #0891b2; /* Cyan-700-light */
 }
 
 /* --- ACHIEVEMENT STYLES (BULLETS REMOVED) --- */
@@ -129,38 +91,31 @@ html:not(.dark) .logo-overlap-image {
     margin-bottom: 0.75rem; /* Matches space-y-3 */
 }
 
-/* --- NEW STYLES FOR PROJECT CARD (REQUEST 4) --- */
+/* --- STYLES FOR PROJECT CARD --- */
 .project-card-item {
-    /* Styles for the card in light mode */
     border-color: #e5e7eb; 
     background-color: #fff;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
-.project-card-item:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Lighter shadow on hover */
-    transform: translateY(-2px); /* Slight lift */
-}
-/* Styles for the card in dark mode */
 html.dark .project-card-item {
     border-color: #374151; 
-    background-color: #1f2937; /* Gray-800 equivalent for card background */
+    background-color: #1f2937;
     box-shadow: none;
 }
 html.dark .project-card-item:hover {
-    box-shadow: 0 10px 15px -3px rgba(34, 211, 238, 0.05); /* Cyan shadow hint */
+    box-shadow: 0 10px 15px -3px rgba(34, 211, 238, 0.05);
 }
 
-/* Hide the github icon initially for clean look on the project cards, 
-   only show it inside the card when its not hovered for the main link 
-   (The overall card is linked via the hover overlay link) */
-.project-card-item .github-link-container {
-    opacity: 1;
-    transition: opacity 0.3s;
-}
-.project-card-item:hover .github-link-container {
-    opacity: 0;
+/* --- PROJECT IMAGE HOVER EFFECT --- */
+.project-image {
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+.group:hover .project-image {
+    filter: brightness(1.2);
+}
+
+/* --- PROJECT DETAIL PAGE STYLES --- */
 .project-details {
   margin-top: 2rem;
 }
@@ -183,28 +138,21 @@ html.dark .project-card-item:hover {
 }
 
 .github-link {
-  display: inline-block;
+  display: inline-flex; /* Use flexbox */
+  align-items: center; /* Vertically align items */
+  gap: 0.5rem; /* Space between icon and text */
   margin-top: 1rem;
-  border-radius: 50%;
-  overflow: hidden;
+  text-decoration: none;
+  color: #22d3ee; /* Cyan color for the link */
+  font-weight: 500;
 }
 
 .github-link img {
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
 }
 
-.project-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.project-image {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-left: 1rem;
+.github-link:hover {
+  text-decoration: underline;
 }
