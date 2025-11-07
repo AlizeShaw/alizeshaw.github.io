@@ -2,7 +2,7 @@
 layout: project
 title: Marvin
 image: assets/pixel.jpg
-github_link: https://github.com/example/marvin
+github_link: https://github.com/dishana11/Marvin
 ---
 
 ## Marvin

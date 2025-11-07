@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="dark"> 
 
@@ -275,10 +276,10 @@
                     <!-- PROJECTS GRID CONTAINER: 1 column on mobile, 2 columns on medium, 3 columns on large -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         
-                        <!-- Project 1: Twitter (X) automation bot -->
+                        {% for project in site.projects %}
                         <div class="project-card-item group relative p-4 rounded-xl border border-gray-700-dark border-gray-200-light shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 overflow-hidden cursor-pointer">
                             <!-- Clickable Overlay Link (Covers the entire card on hover) -->
-                            <a href="#" target="_blank" aria-label="View Project: X Automation Bot" 
+                            <a href="{{ project.url }}" target="_blank" aria-label="View Project: {{ project.title }}" 
                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
                                 <!-- Eye Icon -->
                                 <svg class="w-10 h-10 text-white animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -289,157 +290,26 @@
                             <!-- Project Content -->
                             <div class="space-y-3">
                                 <!-- Image Placeholder (15px rounded) -->
-                                <img src="https://placehold.co/600x200/52c2cf/111827?text=X+Automation+Bot" 
-                                     alt="Twitter X Automation Bot thumbnail"
+                                <img src="{{ project.image }}" 
+                                     alt="{{ project.title }} thumbnail"
                                      class="w-full h-32 object-cover rounded-[15px] shadow-md transition-opacity duration-300">
                                 
                                 <h3 class="text-xl font-semibold text-white-dark text-gray-800">
-                                    Twitter (X) automation bot
+                                    {{ project.title }}
                                 </h3>
                                 <p class="text-sm text-gray-500-dark text-gray-500 line-clamp-3">
-                                    A bot designed for automating posts and interactions on X (formerly Twitter) for content scheduling and engagement.
+                                    {{ project.content | strip_html | truncatewords: 25 }}
                                 </p>
                                 
                                 <!-- GitHub Link (Shows when not hovered for direct GitHub access) -->
                                 <div class="pt-1 github-link-container">
-                                    <a href="#" target="_blank" aria-label="GitHub Repository: X Automation Bot" class="interactive-link social-link hover:text-cyan-400-dark dark:hover:text-cyan-400-dark transition-colors">
+                                    <a href="{{ project.github }}" target="_blank" aria-label="GitHub Repository: {{ project.title }}" class="interactive-link social-link hover:text-cyan-400-dark dark:hover:text-cyan-400-dark transition-colors">
                                         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.37-1-3.35.45-1.03.48-2.05-.12-3.04 0 0-1.03-.35-3.41 1.05A7.17 7.17 0 0 0 12 5.5c-1.12 0-2.24.2-3.3.61C5.54 3.3 4.5 3.65 4.5 3.65c-.6 1-.57 2.02-.12 3.04-.73.98-1.08 2.08-1 3.35 0 3.5 3 5.5 6 5.5-.39.42-.75 1.05-.75 2v4"/></svg>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Project 2: The marvin project -->
-                        <div class="project-card-item group relative p-4 rounded-xl border border-gray-700-dark border-gray-200-light shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 overflow-hidden cursor-pointer">
-                            <!-- Clickable Overlay Link (Covers the entire card on hover) -->
-                            <a href="#" target="_blank" aria-label="View Project: The Marvin Project" 
-                               class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
-                                <svg class="w-10 h-10 text-white animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
-                                </svg>
-                            </a>
-
-                            <!-- Project Content -->
-                            <div class="space-y-3">
-                                <!-- Image Placeholder (15px rounded) -->
-                                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/pixel.jpg" 
-                                     alt="The Marvin Project thumbnail"
-                                     class="w-full h-32 object-cover rounded-[15px] shadow-md transition-opacity duration-300">
-                                
-                                <h3 class="text-xl font-semibold text-white-dark text-gray-800">
-                                    The marvin project
-                                </h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500 line-clamp-3">
-                                    The core project I contributed to during my summer research at Plaksha University, focusing on [Specify area if known, e.g., NLP/AI].
-                                </p>
-                                
-                                <!-- GitHub Link (Shows when not hovered for direct GitHub access) -->
-                                <div class="pt-1 github-link-container">
-                                    <a href="#" target="_blank" aria-label="GitHub Repository: The Marvin Project" class="interactive-link social-link hover:text-cyan-400-dark dark:hover:text-cyan-400-dark transition-colors">
-                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.37-1-3.35.45-1.03.48-2.05-.12-3.04 0 0-1.03-.35-3.41 1.05A7.17 7.17 0 0 0 12 5.5c-1.12 0-2.24.2-3.3.61C5.54 3.3 4.5 3.65 4.5 3.65c-.6 1-.57 2.02-.12 3.04-.73.98-1.08 2.08-1 3.35 0 3.5 3 5.5 6 5.5-.39.42-.75 1.05-.75 2v4"/></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 3: Penetrating a hole through gaussian surface -->
-                        <div class="project-card-item group relative p-4 rounded-xl border border-gray-700-dark border-gray-200-light shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 overflow-hidden cursor-pointer">
-                            <!-- Clickable Overlay Link (Covers the entire card on hover) -->
-                            <a href="#" target="_blank" aria-label="View Project: Gaussian Surface" 
-                               class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
-                                <svg class="w-10 h-10 text-white animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
-                                </svg>
-                            </a>
-
-                            <!-- Project Content -->
-                            <div class="space-y-3">
-                                <!-- Image Placeholder (15px rounded) -->
-                                <img src="https://placehold.co/600x200/52c2cf/111827?text=Gaussian+Surface+Model" 
-                                     alt="Gaussian Surface Project thumbnail"
-                                     class="w-full h-32 object-cover rounded-[15px] shadow-md transition-opacity duration-300">
-                                
-                                <h3 class="text-xl font-semibold text-white-dark text-gray-800">
-                                    Penetrating a hole through gaussian surface
-                                </h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500 line-clamp-3">
-                                    A theoretical and computational exploration involving complex calculations on the field effects of creating a hole in a Gaussian body.
-                                </p>
-                                
-                                <!-- GitHub Link (Shows when not hovered for direct GitHub access) -->
-                                <div class="pt-1 github-link-container">
-                                    <a href="#" target="_blank" aria-label="GitHub Repository: Gaussian Surface" class="interactive-link social-link hover:text-cyan-400-dark dark:hover:text-cyan-400-dark transition-colors">
-                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.37-1-3.35.45-1.03.48-2.05-.12-3.04 0 0-1.03-.35-3.41 1.05A7.17 7.17 0 0 0 12 5.5c-1.12 0-2.24.2-3.3.61C5.54 3.3 4.5 3.65 4.5 3.65c-.6 1-.57 2.02-.12 3.04-.73.98-1.08 2.08-1 3.35 0 3.5 3 5.5 6 5.5-.39.42-.75 1.05-.75 2v4"/></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 4: Cmd_Termux-Integration Public -->
-                        <div class="project-card-item group relative p-4 rounded-xl border border-gray-700-dark border-gray-200-light shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 overflow-hidden cursor-pointer">
-                            <!-- Clickable Overlay Link (Covers the entire card on hover) -->
-                            <a href="#" target="_blank" aria-label="View Project: Cmd_Termux-Integration" 
-                               class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
-                                <svg class="w-10 h-10 text-white animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
-                                </svg>
-                            </a>
-
-                            <!-- Project Content -->
-                            <div class="space-y-3">
-                                <!-- Image Placeholder (15px rounded) -->
-                                <img src="https://placehold.co/600x200/22d3ee/111827?text=CMD-Termux+Integration" 
-                                     alt="CMD-Termux Integration Project thumbnail"
-                                     class="w-full h-32 object-cover rounded-[15px] shadow-md transition-opacity duration-300">
-                                
-                                <h3 class="text-xl font-semibold text-white-dark text-gray-800">
-                                    Cmd\_Termux-Integration Public
-                                </h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500 line-clamp-3">
-                                    Send CMD commands from Windows to Termux over local Wi-Fi. A minimal remote execution setup using client-server model.
-                                </p>
-                                
-                                <!-- GitHub Link (Shows when not hovered for direct GitHub access) -->
-                                <div class="pt-1 github-link-container">
-                                    <a href="#" target="_blank" aria-label="GitHub Repository: Cmd_Termux-Integration" class="interactive-link social-link hover:text-cyan-400-dark dark:hover:text-cyan-400-dark transition-colors">
-                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.37-1-3.35.45-1.03.48-2.05-.12-3.04 0 0-1.03-.35-3.41 1.05A7.17 7.17 0 0 0 12 5.5c-1.12 0-2.24.2-3.3.61C5.54 3.3 4.5 3.65 4.5 3.65c-.6 1-.57 2.02-.12 3.04-.73.98-1.08 2.08-1 3.35 0 3.5 3 5.5 6 5.5-.39.42-.75 1.05-.75 2v4"/></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 5: alzeural an open source organisation -->
-                        <div class="project-card-item group relative p-4 rounded-xl border border-gray-700-dark border-gray-200-light shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 overflow-hidden cursor-pointer">
-                            <!-- Clickable Overlay Link (Covers the entire card on hover) -->
-                            <a href="#" target="_blank" aria-label="View Project: Alzeural Organisation" 
-                               class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
-                                <svg class="w-10 h-10 text-white animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
-                                </svg>
-                            </a>
-
-                            <!-- Project Content -->
-                            <div class="space-y-3">
-                                <!-- Image Placeholder (15px rounded) -->
-                                <img src="https://raw.githubusercontent.com/AlizeShaw/alizeshaw.github.io/main/assets/alzie.jpg" 
-                                     alt="Alzeural Open Source Organisation thumbnail"
-                                     class="w-full h-32 object-cover rounded-[15px] shadow-md transition-opacity duration-300">
-                                
-                                <h3 class="text-xl font-semibold text-white-dark text-gray-800">
-                                    alzeural an open source organisation
-                                </h3>
-                                <p class="text-sm text-gray-500-dark text-gray-500 line-clamp-3">
-                                    My personal open source organization dedicated to fostering collaboration on projects related to advanced computing and AI.
-                                </p>
-                                
-                                <!-- GitHub Link (Shows when not hovered for direct GitHub access) -->
-                                <div class="pt-1 github-link-container">
-                                    <a href="#" target="_blank" aria-label="GitHub Repository: Alzeural Organisation" class="interactive-link social-link hover:text-cyan-400-dark dark:hover:text-cyan-400-dark transition-colors">
-                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.37-1-3.35.45-1.03.48-2.05-.12-3.04 0 0-1.03-.35-3.41 1.05A7.17 7.17 0 0 0 12 5.5c-1.12 0-2.24.2-3.3.61C5.54 3.3 4.5 3.65 4.5 3.65c-.6 1-.57 2.02-.12 3.04-.73.98-1.08 2.08-1 3.35 0 3.5 3 5.5 6 5.5-.39.42-.75 1.05-.75 2v4"/></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
 
                     </div>
                 </section>
