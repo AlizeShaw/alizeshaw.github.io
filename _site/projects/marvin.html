@@ -46,14 +46,14 @@
                                                                                                                     <!-- Content Container -->
                                                                                                                             <div class="w-full max-w-3xl text-left mt-10" id="page-content-wrapper">
                                                                                                                                         <div class="project-details markdown-content">
+  <h1 class="mt-0">Marvin</h1>
+  <img src="/assets/pixel.jpg" alt="Marvin" class="project-image-full mb-4">
   <div class="flex justify-between items-center mb-4">
-    <a href="/projects.html" class="back-link">&larr; Back to Projects</a>
+    <p class="text-gray-500">November 07, 2025</p>
     <a href="https://github.com/dishana11/Marvin" class="github-icon" title="visit project's repo">
       <img src="/assets/github.jpg" alt="GitHub">
     </a>
   </div>
-  <h1>Marvin</h1>
-  <img src="/assets/pixel.jpg" alt="Marvin" class="project-image-full">
   <h2 id="marvin--the-autonomous-service-robot-">Marvin — The Autonomous Service Robot 🤖</h2>
 
 <p><strong>Marvin</strong> is an autonomous service robot I built during a 12-day YTS (Young Technology Scholars) program.<br />
@@ -132,8 +132,97 @@ Some envisioned use cases included:</p>
 
 <ul>
   <li>Carrying medicines, water, or personal items between rooms</li>
-  <li>Detecting if someone has fallen using motion sensors and notifying ca</li>
+  <li>Detecting if someone has fallen using motion sensors and notifying caretakers</li>
+  <li>Following the user to provide assistance on command</li>
+  <li>Acting as a simple <strong>home companion robot</strong></li>
 </ul>
+
+<p>This concept merges <strong>autonomous robotics with compassion</strong> — using technology to help people live more independently.</p>
+
+<hr />
+
+<h3 id="-technologies-used">🧩 Technologies Used</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Purpose</th>
+      <th>Technology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Raspberry Pi 4</strong></td>
+      <td>Processing + Communication</td>
+      <td>Python, Flask, Socket Programming</td>
+    </tr>
+    <tr>
+      <td><strong>Arduino Uno</strong></td>
+      <td>Motor &amp; Sensor Control</td>
+      <td>C++ (Arduino IDE)</td>
+    </tr>
+    <tr>
+      <td><strong>LiDAR Sensor</strong></td>
+      <td>Mapping &amp; Obstacle Detection</td>
+      <td>Serial Data Processing</td>
+    </tr>
+    <tr>
+      <td><strong>Ultrasonic Sensors</strong></td>
+      <td>Short-range Obstacle Avoidance</td>
+      <td>HC-SR04 Modules</td>
+    </tr>
+    <tr>
+      <td><strong>Motor Driver (L298N)</strong></td>
+      <td>Drive Control</td>
+      <td>PWM signals</td>
+    </tr>
+    <tr>
+      <td><strong>Web Dashboard</strong></td>
+      <td>Remote Interface</td>
+      <td>Flask + HTML/CSS</td>
+    </tr>
+    <tr>
+      <td><strong>Wi-Fi</strong></td>
+      <td>Communication</td>
+      <td>ESP8266 module</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="-learnings">🧪 Learnings</h3>
+
+<p>Through Marvin, I learned how to:</p>
+<ul>
+  <li>Interface hardware with software layers efficiently</li>
+  <li>Use LiDAR and sensors for real-time decision making</li>
+  <li>Debug serial communication between Arduino and Raspberry Pi</li>
+  <li>Balance computational load between microcontrollers</li>
+  <li>Build scalable robotics logic in Python</li>
+</ul>
+
+<p>The most valuable insight was realizing that <strong>hardware problems often require software empathy</strong> — understanding how sensors “think” before commanding them.</p>
+
+<hr />
+
+<h3 id="️-future-improvements">🛰️ Future Improvements</h3>
+
+<ul>
+  <li>Integrating <strong>SLAM (Simultaneous Localization and Mapping)</strong> for better room mapping</li>
+  <li>Adding <strong>voice commands</strong> using speech recognition</li>
+  <li>Enabling <strong>autonomous charging</strong> through docking stations</li>
+  <li>Using <strong>TensorFlow Lite</strong> for improved visual detection on the Pi</li>
+</ul>
+
+<hr />
+
+<p><img src="assets/pixel.jpg" alt="Marvin Image" /></p>
+
+<hr />
+
+<p>Would you like me to include a short <strong>“code workflow diagram”</strong> (showing how Raspberry Pi, Arduino, LiDAR, and sensors communicate)? It would look visually clean in Markdown and help explain the control flow.</p>
 
 </div>
 

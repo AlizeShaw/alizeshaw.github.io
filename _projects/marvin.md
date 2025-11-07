@@ -71,4 +71,52 @@ Marvin was inspired by the idea of **assistive robotics** for the elderly or mob
 Some envisioned use cases included:
 
 - Carrying medicines, water, or personal items between rooms  
-- Detecting if someone has fallen using motion sensors and notifying ca
+- Detecting if someone has fallen using motion sensors and notifying caretakers  
+- Following the user to provide assistance on command  
+- Acting as a simple **home companion robot**
+
+This concept merges **autonomous robotics with compassion** — using technology to help people live more independently.
+
+---
+
+### 🧩 Technologies Used
+
+| Component | Purpose | Technology |
+|------------|----------|-------------|
+| **Raspberry Pi 4** | Processing + Communication | Python, Flask, Socket Programming |
+| **Arduino Uno** | Motor & Sensor Control | C++ (Arduino IDE) |
+| **LiDAR Sensor** | Mapping & Obstacle Detection | Serial Data Processing |
+| **Ultrasonic Sensors** | Short-range Obstacle Avoidance | HC-SR04 Modules |
+| **Motor Driver (L298N)** | Drive Control | PWM signals |
+| **Web Dashboard** | Remote Interface | Flask + HTML/CSS |
+| **Wi-Fi** | Communication | ESP8266 module |
+
+---
+
+### 🧪 Learnings
+
+Through Marvin, I learned how to:
+- Interface hardware with software layers efficiently  
+- Use LiDAR and sensors for real-time decision making  
+- Debug serial communication between Arduino and Raspberry Pi  
+- Balance computational load between microcontrollers  
+- Build scalable robotics logic in Python  
+
+The most valuable insight was realizing that **hardware problems often require software empathy** — understanding how sensors “think” before commanding them.
+
+---
+
+### 🛰️ Future Improvements
+
+- Integrating **SLAM (Simultaneous Localization and Mapping)** for better room mapping  
+- Adding **voice commands** using speech recognition  
+- Enabling **autonomous charging** through docking stations  
+- Using **TensorFlow Lite** for improved visual detection on the Pi  
+
+---
+
+![Marvin Image](assets/pixel.jpg)
+
+---
+
+Would you like me to include a short **“code workflow diagram”** (showing how Raspberry Pi, Arduino, LiDAR, and sensors communicate)? It would look visually clean in Markdown and help explain the control flow.

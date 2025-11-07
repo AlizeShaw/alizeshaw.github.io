@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Penetrating a hole through gaussian surface - Dishana Rupani</title>
+            <title>Penetrating a Hole Through Gaussian Surface - Dishana Rupani</title>
                 <meta name="description" content="18 y/o Developer building the future.">
                     <meta name="author" content="Dishana Rupani">
                         <meta name="keywords" content="developer, student, a-level, machine learning, web development, programming, portfolio, blog, projects">
-                            <meta property="og:title" content="Penetrating a hole through gaussian surface - Dishana Rupani">
+                            <meta property="og:title" content="Penetrating a Hole Through Gaussian Surface - Dishana Rupani">
                                 <meta property="og:description" content="18 y/o Developer building the future.">
                                     <meta property="og:image" content="http://0.0.0.0:4000/assets/avatar1.jpg">
                                         <meta property="og:url" content="http://0.0.0.0:4000/projects/gaussian-surface.html">
                                             <meta property="og:type" content="website">
                                                 <meta name="twitter:card" content="summary_large_image">
-                                                    <meta name="twitter:title" content="Penetrating a hole through gaussian surface - Dishana Rupani">
+                                                    <meta name="twitter:title" content="Penetrating a Hole Through Gaussian Surface - Dishana Rupani">
                                                         <meta name="twitter:description" content="18 y/o Developer building the future.">
                                                             <meta name="twitter:image" content="http://0.0.0.0:4000/assets/avatar1.jpg">
                                                                 <link rel="icon" href="/assets/avatar1.jpg" type="image/jpeg">
@@ -46,15 +46,226 @@
                                                                                                                     <!-- Content Container -->
                                                                                                                             <div class="w-full max-w-3xl text-left mt-10" id="page-content-wrapper">
                                                                                                                                         <div class="project-details markdown-content">
+  <h1 class="mt-0">Penetrating a Hole Through Gaussian Surface</h1>
+  <img src="/assets/gauss1.png" alt="Penetrating a Hole Through Gaussian Surface" class="project-image-full mb-4">
   <div class="flex justify-between items-center mb-4">
-    <a href="/projects.html" class="back-link">&larr; Back to Projects</a>
+    <p class="text-gray-500">June 26, 2022</p>
     <a href="" class="github-icon" title="visit project's repo">
       <img src="/assets/github.jpg" alt="GitHub">
     </a>
   </div>
-  <h1>Penetrating a hole through gaussian surface</h1>
-  <img src="/assets/gauss1.png" alt="Penetrating a hole through gaussian surface" class="project-image-full">
-  <p>A theoretical and computational exploration involving complex calculations on the field effects of creating a hole in a Gaussian body.</p>
+  <h2 id="intro">Intro</h2>
+<p><em>A theoretical and computational exploration involving complex calculations on the field effects of creating a hole in a Gaussian body.</em></p>
+
+<hr />
+
+<h2 id="-aim">🧭 Aim</h2>
+<p>To investigate the changes in electric field and electric potential <strong>inside and around a uniformly charged spherical shell</strong> when a small hole is made, using <strong>Gauss’s Law</strong> and the <strong>principles of electrostatics</strong>.</p>
+
+<hr />
+
+<h2 id="-introduction">📘 Introduction</h2>
+<p>In electrostatics, a <strong>uniformly charged thin insulating spherical shell</strong> produces an electric field and potential that can be analyzed using Gauss’s Law.<br />
+For a complete spherical shell, the electric field inside is zero due to symmetry.</p>
+
+<p>However, when a <strong>small hole</strong> is introduced on the shell’s surface, this symmetry is broken — altering both the <strong>electric field distribution</strong> and the <strong>potential</strong> around the shell.</p>
+
+<p>This project explores these effects, analyzing:</p>
+<ul>
+  <li>The <strong>change in potential</strong> at the center and other points along the radius, and</li>
+  <li>The <strong>emergence of a non-zero electric field</strong> near the hole.</li>
+</ul>
+
+<h3 id="importance-and-applications">Importance and Applications</h3>
+<p>Understanding these subtle changes is crucial for:</p>
+<ul>
+  <li>Designing <strong>electrostatic shielding systems</strong></li>
+  <li>Studying <strong>charge imperfections</strong> in materials</li>
+  <li>Understanding <strong>non-uniform charge distributions</strong> in sensors and capacitors</li>
+</ul>
+
+<hr />
+
+<h2 id="️-theory">⚛️ Theory</h2>
+
+<h3 id="1-gausss-law">1. <strong>Gauss’s Law</strong></h3>
+<blockquote>
+  <p>The total electric flux through any closed surface is proportional to the enclosed charge.</p>
+</blockquote>
+
+<p>Mathematically:<br />
+[
+\Phi = \oint \mathbf{E} \cdot d\mathbf{A} = \frac{Q_{enc}}{\varepsilon_0}
+]</p>
+
+<h3 id="2-electric-field-of-a-uniformly-charged-thin-spherical-shell">2. <strong>Electric Field of a Uniformly Charged Thin Spherical Shell</strong></h3>
+<ul>
+  <li>
+    <p><strong>Outside the shell:</strong><br />
+( E = \frac{1}{4\pi\varepsilon_0} \cdot \frac{Q}{r^2} )<br />
+(as if all charge were concentrated at the center)</p>
+  </li>
+  <li>
+    <p><strong>Inside the shell:</strong><br />
+( E = 0 ) due to perfect symmetry.</p>
+  </li>
+</ul>
+
+<p>When a <strong>hole</strong> is made, symmetry breaks — causing a <strong>disturbance in local field lines</strong> near the missing charge region.</p>
+
+<h3 id="3-potential-on-the-shell">3. <strong>Potential on the Shell</strong></h3>
+<p>The potential on the shell surface is constant:<br />
+[
+V_0 = \frac{Q}{4\pi\varepsilon_0 R}
+]</p>
+
+<h3 id="4-effect-of-a-small-hole">4. <strong>Effect of a Small Hole</strong></h3>
+<p>If a small fractional area ( \alpha ) of the total surface ( 4\pi R^2 ) is removed:<br />
+[
+dq = \alpha Q
+]</p>
+
+<p>This missing charge modifies the potential and field near the hole via <strong>superposition</strong>:
+[
+V_{center} = V_0 (1 - \alpha)
+]</p>
+
+<hr />
+
+<h2 id="-materials-required">🧪 Materials Required</h2>
+<ul>
+  <li>Thin insulating <strong>hollow sphere</strong> (charged shell model)</li>
+  <li><strong>High-voltage power supply</strong> for uniform charging</li>
+  <li><strong>Electrometer</strong> for potential measurement</li>
+  <li><strong>Charge detector / voltmeter</strong></li>
+  <li><strong>Fine drilling tool</strong> for hole creation</li>
+  <li><strong>Non-conductive stand</strong> for isolation</li>
+  <li><strong>Insulating gloves and tools</strong></li>
+</ul>
+
+<hr />
+
+<h2 id="-procedure">🧰 Procedure</h2>
+
+<ol>
+  <li><strong>Setup:</strong> Place the hollow insulating shell on a non-conductive stand.</li>
+  <li><strong>Charge the Shell:</strong> Use the high-voltage supply to uniformly charge it. Record the initial potential ( V_0 ).</li>
+  <li><strong>Measure Field Inside:</strong> Confirm ( E = 0 ) inside the shell (per Gauss’s Law).</li>
+  <li><strong>Drill a Small Hole:</strong> Carefully make a small circular hole in the shell.</li>
+  <li><strong>Re-Measure:</strong> Measure the potential at the center and near the hole after the modification.</li>
+  <li><strong>Observe Electric Field:</strong> Detect any non-zero electric field near the hole using a charge detector.</li>
+  <li><strong>Record Observations:</strong> Compare results before and after the hole is made.</li>
+  <li><strong>Analyze:</strong> Calculate theoretical and observed variations.</li>
+</ol>
+
+<hr />
+
+<h2 id="-calculations">📐 Calculations</h2>
+
+<h3 id="surface-charge-density">Surface Charge Density</h3>
+<p>[
+\sigma = \frac{Q}{4\pi R^2}
+]</p>
+
+<h3 id="initial-potential-on-shell">Initial Potential on Shell</h3>
+<p>[
+V_0 = \frac{Q}{4\pi\varepsilon_0 R}
+]</p>
+
+<h3 id="charge-removed-by-the-hole">Charge Removed by the Hole</h3>
+<p>[
+dq = \alpha Q
+]</p>
+
+<h3 id="modified-potential-at-center">Modified Potential at Center</h3>
+<p>[
+V_{center} = V_0 - \frac{dq}{4\pi\varepsilon_0 R} = V_0(1 - \alpha)
+]</p>
+
+<h3 id="electric-field-near-the-hole">Electric Field Near the Hole</h3>
+<p>Since the local charge distribution is incomplete:
+[
+E_{near\ hole} \approx \alpha \frac{Q}{4\pi\varepsilon_0 R^2} = \frac{\alpha V_0}{R}
+]</p>
+
+<hr />
+
+<h2 id="-observations">📊 Observations</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Trial</th>
+      <th style="text-align: left">Configuration</th>
+      <th style="text-align: left">Potential at Center (V)</th>
+      <th style="text-align: left">Electric Field Near Hole (E)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">No Hole</td>
+      <td style="text-align: left">( V_0 )</td>
+      <td style="text-align: left">( E = 0 )</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">With Hole</td>
+      <td style="text-align: left">( V_0(1 - \alpha) )</td>
+      <td style="text-align: left">Non-zero (varies near hole)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-results">📈 Results</h2>
+<ol>
+  <li>The potential at the center <strong>decreases proportionally</strong> to the removed fractional area ( \alpha ).<br />
+[
+V_{center} = V_0(1 - \alpha)
+]</li>
+  <li>A <strong>non-zero electric field</strong> appears near the hole, approximately:<br />
+[
+E_{near\ hole} \approx \frac{\alpha V_0}{R}
+]</li>
+  <li>The symmetry of the field lines is broken — they now diverge slightly near the hole instead of forming a perfectly closed spherical pattern.</li>
+</ol>
+
+<hr />
+
+<h2 id="-conclusion">✅ Conclusion</h2>
+<p>This experiment demonstrates how even a minor modification — like creating a small hole in a uniformly charged spherical shell — can significantly alter the <strong>electric field</strong> and <strong>potential</strong> distribution.</p>
+
+<p>By applying Gauss’s Law and the superposition principle:</p>
+<ul>
+  <li>The <strong>potential at the center</strong> decreases by a fraction ( (1 - \alpha) )</li>
+  <li>The <strong>electric field near the hole</strong> becomes non-zero</li>
+  <li>The <strong>symmetry of the electrostatic system</strong> is disturbed</li>
+</ul>
+
+<p>These insights are crucial in practical domains such as:</p>
+<ul>
+  <li><strong>Electrostatic shielding</strong></li>
+  <li><strong>Capacitor design</strong></li>
+  <li><strong>Non-uniform charge analysis</strong></li>
+  <li><strong>Material defect modeling</strong></li>
+</ul>
+
+<hr />
+
+<h2 id="-references--bibliography">📚 References / Bibliography</h2>
+<ol>
+  <li>Griffiths, D. J. <em>Introduction to Electrodynamics.</em> Pearson, 2013.</li>
+  <li>Halliday, D., Resnick, R., &amp; Walker, J. <em>Fundamentals of Physics.</em> Wiley, 2014.</li>
+  <li>Purcell, E. M., &amp; Morin, D. J. <em>Electricity and Magnetism.</em> Cambridge University Press, 2013.</li>
+  <li>Jackson, J. D. <em>Classical Electrodynamics.</em> Wiley, 1999.</li>
+  <li><em>Gauss’s Law and Its Applications.</em> Physics LibreTexts, 2023 — <a href="https://phys.libretexts.org">https://phys.libretexts.org</a></li>
+  <li><em>Electric Fields and Potentials of Spherical Shells.</em> HyperPhysics, Georgia State University — <a href="http://hyperphysics.phy-astr.gsu.edu">http://hyperphysics.phy-astr.gsu.edu</a></li>
+</ol>
+
+<hr />
+
 
 </div>
 

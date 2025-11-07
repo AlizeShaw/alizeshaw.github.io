@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>ML model to predict house turnovers - Dishana Rupani</title>
+            <title>ML Model to Predict House Turnovers - Dishana Rupani</title>
                 <meta name="description" content="18 y/o Developer building the future.">
                     <meta name="author" content="Dishana Rupani">
                         <meta name="keywords" content="developer, student, a-level, machine learning, web development, programming, portfolio, blog, projects">
-                            <meta property="og:title" content="ML model to predict house turnovers - Dishana Rupani">
+                            <meta property="og:title" content="ML Model to Predict House Turnovers - Dishana Rupani">
                                 <meta property="og:description" content="18 y/o Developer building the future.">
                                     <meta property="og:image" content="http://0.0.0.0:4000/assets/avatar1.jpg">
                                         <meta property="og:url" content="http://0.0.0.0:4000/projects/ml-house-turnover.html">
                                             <meta property="og:type" content="website">
                                                 <meta name="twitter:card" content="summary_large_image">
-                                                    <meta name="twitter:title" content="ML model to predict house turnovers - Dishana Rupani">
+                                                    <meta name="twitter:title" content="ML Model to Predict House Turnovers - Dishana Rupani">
                                                         <meta name="twitter:description" content="18 y/o Developer building the future.">
                                                             <meta name="twitter:image" content="http://0.0.0.0:4000/assets/avatar1.jpg">
                                                                 <link rel="icon" href="/assets/avatar1.jpg" type="image/jpeg">
@@ -46,15 +46,70 @@
                                                                                                                     <!-- Content Container -->
                                                                                                                             <div class="w-full max-w-3xl text-left mt-10" id="page-content-wrapper">
                                                                                                                                         <div class="project-details markdown-content">
+  <h1 class="mt-0">ML Model to Predict House Turnovers</h1>
+  <img src="/assets/money%20(1).jpg" alt="ML Model to Predict House Turnovers" class="project-image-full mb-4">
   <div class="flex justify-between items-center mb-4">
-    <a href="/projects.html" class="back-link">&larr; Back to Projects</a>
+    <p class="text-gray-500">June 26, 2022</p>
     <a href="" class="github-icon" title="visit project's repo">
       <img src="/assets/github.jpg" alt="GitHub">
     </a>
   </div>
-  <h1>ML model to predict house turnovers</h1>
-  <img src="/assets/money%20(1).jpg" alt="ML model to predict house turnovers" class="project-image-full">
-  <p>A machine learning model to predict house turnovers.</p>
+  <h2 id="ml-model-to-predict-house-turnovers">ML Model to Predict House Turnovers</h2>
+
+<h3 id="introduction">Introduction</h3>
+<p>This project dives into the concept of <em>house turnover prediction</em> and the deceptive mechanisms underlying online “color trading” platforms. These platforms claim to offer users a chance to double their money through simple predictions, but the reality is far more complex and rigged against the participants.</p>
+
+<h3 id="background">Background</h3>
+<p>During my exploration of multiple such trading websites, I obtained access to a few source codes used by these platforms. Analyzing the code revealed a crucial pattern — around <strong>70% of the time</strong>, the system intentionally displays the <em>opposite</em> outcome of the majority’s bet.<br />
+This subtle manipulation ensures that, in the long run, the <strong>house always wins</strong>, while the majority of players lose money regardless of their strategy or prediction accuracy.</p>
+
+<h3 id="the-hidden-logic">The Hidden Logic</h3>
+<p>Unlike legitimate trading systems, these websites are not connected to regulated exchanges. The algorithms inside them are pre-programmed to generate outcomes that appear random but are actually <em>biased against users</em>.<br />
+The code often follows this logic:</p>
+<ol>
+  <li>Track the percentage of users betting on each color (or side).</li>
+  <li>Select the color that causes the <strong>maximum total loss</strong> for the majority.</li>
+  <li>Display it as the “winning” result.</li>
+</ol>
+
+<p>As a result, even if a player uses advanced strategies or statistical modeling, their probability of long-term profit remains close to zero.</p>
+
+<h3 id="socioeconomic-impact">Socioeconomic Impact</h3>
+<p>The most concerning aspect of this pattern is <strong>who it affects</strong>.<br />
+The majority of participants are from economically weaker backgrounds, often lured by ads promising “guaranteed profits” or “double returns.” These individuals deposit real money through digital wallets or payment links that lead to <strong>unregistered or shell bank accounts</strong>.</p>
+
+<p>Once enough funds accumulate, the operators often:</p>
+<ul>
+  <li><strong>Disable withdrawals</strong>,</li>
+  <li><strong>Shut down the website</strong>,</li>
+  <li>Or <strong>rebrand under a new domain</strong>, repeating the cycle.</li>
+</ul>
+
+<p>This makes legal recovery nearly impossible and turns these schemes into large-scale digital scams.</p>
+
+<h3 id="my-analysis">My Analysis</h3>
+<p>Using the obtained data and behavioral records, I built an <strong>ML model</strong> to simulate these turnover patterns.<br />
+The model’s goal was <strong>not</strong> to predict player winnings but to understand how the <em>system’s design</em> ensures consistent profits for the operator.<br />
+The machine learning component used:</p>
+<ul>
+  <li>Player bet data</li>
+  <li>Color outcome sequences</li>
+  <li>Round-wise turnover distributions</li>
+</ul>
+
+<p>By applying regression and probability-based prediction models, it became evident that the “turnover” always converged toward maximizing the platform’s revenue rather than random fairness.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>This study and model highlight the <strong>predatory mathematics</strong> behind color trading platforms. The illusion of randomness conceals a deterministic algorithm designed for controlled losses.<br />
+Understanding such mechanisms not only helps expose fraudulent systems but also provides insight into how manipulation in algorithmic systems can exploit psychological trust in technology.</p>
+
+<h3 id="future-scope">Future Scope</h3>
+<p>This research could be extended into:</p>
+<ul>
+  <li>Designing AI-based fraud detectors for online prediction platforms.</li>
+  <li>Collaborating with financial cybersecurity teams to trace fund flows through digital shell networks.</li>
+  <li>Building educational tools to warn users about algorithmic exploitation in online “trading” apps.</li>
+</ul>
 
 </div>
 

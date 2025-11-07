@@ -8,15 +8,13 @@ layout: default
         <!-- Main Content -->
         <main class="w-full lg:w-3/4 lg:pr-8">
             <article class="prose lg:prose-xl max-w-none markdown-content">
-                <h1 class="text-4xl font-bold mb-4">{{ page.title }}</h1>
-                <p class="text-gray-500 mb-8">{{ page.date | date: "%B %d, %Y" }}</p>
                 {{ content }}
             </article>
         </main>
 
         <!-- Table of Contents -->
         <aside class="w-full lg:w-1/4 lg:pl-8 mt-8 lg:mt-0">
-            <div class="sticky top-8">
+            <div class="sticky top-8 lg:pt-40">
                 <h2 class="text-xl font-semibold mb-4">On this page</h2>
                 <nav id="toc"></nav>
             </div>
@@ -33,7 +31,7 @@ layout: default
         let tocHTML = '<ul class="space-y-2">';
 
         headings.forEach(heading => {
-            const id = heading.textContent.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+            const id = heading.textContent.trim().toLowerCase().replace(/\s+/g, '-').replace(/[\w-]+/g, '');
             heading.id = id;
             const level = heading.tagName.toLowerCase();
             const indentClass = level === 'h3' ? 'ml-4' : '';
